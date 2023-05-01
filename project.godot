@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="time_judge"
+run/main_scene="res://GUI/Main_menu.tscn"
 config/icon="res://icon.png"
 
 [gui]

@@ -1,8 +1,11 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GUI/Main_menu.gd" type="Script" id=1]
 
 [node name="Main_menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -25,3 +28,18 @@ margin_top = -198.0
 margin_right = 278.0
 margin_bottom = -158.0
 text = "Start"
+
+[node name="Author_btn" type="Button" parent="Background"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -269.0
+margin_top = -128.0
+margin_right = -76.0
+margin_bottom = -88.0
+text = "Authors"
+
+[connection signal="pressed" from="Background/Exit_btn" to="." method="_on_Exit_btn_pressed"]
+[connection signal="pressed" from="Background/Start_btn" to="." method="_on_Start_btn_pressed"]
+[connection signal="pressed" from="Background/Author_btn" to="." method="_on_Author_btn_pressed"]
