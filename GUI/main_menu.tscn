@@ -1,17 +1,27 @@
-[gd_scene format=3 uid="uid://b3git4ja05atm"]
+[gd_scene format=2]
 
 [node name="Main_menu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
+[node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+
+[node name="Exit_btn" type="Button" parent="Background"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 85.0
+margin_top = -128.0
+margin_right = 278.0
+margin_bottom = -88.0
+text = "Exit"
+
+[node name="Start_btn" type="Button" parent="Background"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 85.0
+margin_top = -198.0
+margin_right = 278.0
+margin_bottom = -158.0
+text = "Start"
