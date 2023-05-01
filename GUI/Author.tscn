@@ -14,10 +14,10 @@ anchor_bottom = 1.0
 [node name="Back_btn" type="Button" parent="ColorRect"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 83.0
-margin_top = -85.0
-margin_right = 184.0
-margin_bottom = -59.0
+margin_left = 85.0
+margin_top = -128.0
+margin_right = 275.0
+margin_bottom = -88.0
 text = "Back"
 
 [connection signal="pressed" from="ColorRect/Back_btn" to="." method="_on_Back_btn_pressed"]
