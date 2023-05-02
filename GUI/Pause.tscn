@@ -87,6 +87,39 @@ text = "Chase away 6 bears"
 align = 1
 valign = 1
 
+[node name="List3" type="Label" parent="ColorRect/ColorRect/Checklist/VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 176.0
+margin_right = 430.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 0, 40 )
+custom_fonts/font = SubResource( 1 )
+text = "Return min 2 villager"
+align = 1
+valign = 1
+
+[node name="List4" type="Label" parent="ColorRect/ColorRect/Checklist/VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 220.0
+margin_right = 430.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 0, 40 )
+custom_fonts/font = SubResource( 1 )
+text = "Warden self return"
+align = 1
+valign = 1
+
+[node name="List5" type="Label" parent="ColorRect/ColorRect/Checklist/VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 264.0
+margin_right = 430.0
+margin_bottom = 304.0
+rect_min_size = Vector2( 0, 40 )
+custom_fonts/font = SubResource( 1 )
+text = "Gentleman not leave"
+align = 1
+valign = 1
+
 [node name="Return" type="Button" parent="ColorRect/ColorRect"]
 anchor_left = 1.0
 anchor_top = 0.5

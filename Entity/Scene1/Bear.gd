@@ -26,6 +26,7 @@ func _on_Bear_input_event(viewport, event, shape_idx):
 			anim_dots.travel("walk")
 			move_vector = move_vector * -2
 			Global.count_leave_bear += 1
+			collision_layer = 0
 			if is_attack:
 				Global.bear_is_leave = true
 

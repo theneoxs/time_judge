@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Data/Sprites/252f10935edda2dd3bd352c4c764b4e8.jpg" type="Texture" id=1]
+[ext_resource path="res://Data/Texture/252f10935edda2dd3bd352c4c764b4e8.jpg" type="Texture" id=1]
 [ext_resource path="res://Entity/Scene1/Scene1.gd" type="Script" id=2]
 
 [node name="Scene1" type="Node2D"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/252f10935edda2dd3bd352c4c764b4e8.jpg-9b3a39bda30b84e2325c574ad4983ab0.stex"
+path="res://.import/SteamMan_idle.png-09ac67c1698a677a6c51f7e54f55f32d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Data/Sprites/252f10935edda2dd3bd352c4c764b4e8.jpg"
-dest_files=[ "res://.import/252f10935edda2dd3bd352c4c764b4e8.jpg-9b3a39bda30b84e2325c574ad4983ab0.stex" ]
+source_file="res://Data/Sprites/SteamMan_idle.png"
+dest_files=[ "res://.import/SteamMan_idle.png-09ac67c1698a677a6c51f7e54f55f32d.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
