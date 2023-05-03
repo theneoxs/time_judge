@@ -198,6 +198,7 @@ texture_progress = ExtResource( 6 )
 fill_mode = 5
 nine_patch_stretch = true
 
+[connection signal="meteor_has_down" from="Scene3" to="." method="_on_Scene3_meteor_has_down"]
 [connection signal="timeout" from="Dead_timer" to="." method="_on_Dead_timer_timeout"]
 [connection signal="timeout" from="Check_1_bear" to="." method="_on_Check_1_bear_timeout"]
 [connection signal="timeout" from="Check_2_gents" to="." method="_on_Check_2_gents_timeout"]

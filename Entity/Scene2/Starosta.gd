@@ -19,6 +19,7 @@ func _physics_process(delta):
 	rotation_degrees = 0
 	if selected:
 		global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
+		linear_velocity.y = 0
 
 func _input(event):
 	if event is InputEventMouseButton:

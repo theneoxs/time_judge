@@ -94,3 +94,7 @@ func _on_Total_timer_timeout():
 func _on_Check_2_gents_timeout():
 	if Global.count_villager < 2 or !Global.starosta_selfback or Global.gentleman_leave:
 		active_noise(2)
+
+
+func _on_Scene3_meteor_has_down():
+	active_noise(2)

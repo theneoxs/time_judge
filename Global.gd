@@ -6,6 +6,9 @@ var CHECK_1_BEAR = 300
 var CHECK_2_GENTS = 420
 var GENTLEMAN_INCOMING = 350
 var COUNT_BEAR = 6
+var DOWN_METEOR = 550
+var DOWN_PIANO = 330
+var TIME_CREATE_TRASH = 5
 
 var bear_is_dead = false
 var count_leave_bear = 0
@@ -14,3 +17,7 @@ var bear_is_leave = false
 var count_villager = 4
 var starosta_selfback = false
 var gentleman_leave = false
+
+var count_trash = 0
+var car_crashed = false #Использовать к порталу, пока не используемое
+var item_is_picked = false
