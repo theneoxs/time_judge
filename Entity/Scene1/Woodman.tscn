@@ -440,7 +440,6 @@ start_node = "idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=87]
 
 [node name="Woodman" type="KinematicBody2D"]
-collision_layer = 0
 collision_mask = 0
 input_pickable = true
 script = ExtResource( 1 )
@@ -449,7 +448,7 @@ script = ExtResource( 1 )
 position = Vector2( 7, -24 )
 frames = SubResource( 57 )
 animation = "idle"
-frame = 3
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -15 )
@@ -487,6 +486,7 @@ parameters/playback = SubResource( 87 )
 wait_time = 3.0
 one_shot = true
 
+[connection signal="input_event" from="." to="." method="_on_Woodman_input_event"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Dead_timer" to="." method="_on_Dead_timer_timeout"]
 [connection signal="timeout" from="Wait_after_kill" to="." method="_on_Wait_after_kill_timeout"]

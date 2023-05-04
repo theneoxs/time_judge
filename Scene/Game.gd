@@ -1,5 +1,7 @@
 extends Control
 
+onready var fin_screen = $FinScreen
+
 onready var sprites = $AnimationTree
 onready var anim_dots = sprites.get("parameters/playback")
 
@@ -18,10 +20,14 @@ onready var noise1 = $Sprite
 onready var noise2 = $Sprite2
 onready var noise3 = $Sprite3
 
+onready var fin_timer = $Fin_timer
+
 var start1 = false
 var start2 = false
 var start3 = false
 var check_fail = false
+
+var start_fin = false
 
 func _ready():
 	check_1_bear.wait_time = Global.CHECK_1_BEAR
@@ -57,6 +63,8 @@ func _process(delta):
 		noise2.modulate.a = lerp(noise2.modulate.a, 1, delta)
 	if start3:
 		noise3.modulate.a = lerp(noise3.modulate.a, 1, delta)
+	if start_fin:
+		fin_screen.modulate.a = lerp(fin_screen.modulate.a, 1, delta)
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -80,7 +88,10 @@ func active_noise(check):
 
 
 func _on_Dead_timer_timeout():
-	get_tree().change_scene("res://GUI/Game Over.tscn")
+	start_fin = true
+	fin_screen.color = Color(0, 0, 0)
+	check_fail = true
+	fin_timer.start()
 
 func _on_Check_1_bear_timeout():
 	if Global.count_leave_bear < Global.COUNT_BEAR or Global.bear_is_leave:
@@ -88,7 +99,8 @@ func _on_Check_1_bear_timeout():
 
 
 func _on_Total_timer_timeout():
-	get_tree().change_scene("res://GUI/Game complete.tscn")
+	start_fin = true
+	fin_timer.start()
 
 
 func _on_Check_2_gents_timeout():
@@ -98,3 +110,10 @@ func _on_Check_2_gents_timeout():
 
 func _on_Scene3_meteor_has_down():
 	active_noise(2)
+
+
+func _on_Fin_timer_timeout():
+	if check_fail:
+		get_tree().change_scene("res://GUI/Game Over.tscn")
+	else:
+		get_tree().change_scene("res://GUI/Game complete.tscn")

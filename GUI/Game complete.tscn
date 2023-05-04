@@ -49,3 +49,7 @@ custom_fonts/font = SubResource( 1 )
 text = "Press any button"
 align = 1
 valign = 1
+
+[node name="WhiteScreen" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0

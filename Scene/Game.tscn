@@ -139,6 +139,7 @@ position = Vector2( 1180, 232 )
 texture = SubResource( 3 )
 
 [node name="Sprite2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 417, 659 )
 texture = SubResource( 3 )
 
@@ -198,8 +199,19 @@ texture_progress = ExtResource( 6 )
 fill_mode = 5
 nine_patch_stretch = true
 
+[node name="FinScreen" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Fin_timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
 [connection signal="meteor_has_down" from="Scene3" to="." method="_on_Scene3_meteor_has_down"]
 [connection signal="timeout" from="Dead_timer" to="." method="_on_Dead_timer_timeout"]
 [connection signal="timeout" from="Check_1_bear" to="." method="_on_Check_1_bear_timeout"]
 [connection signal="timeout" from="Check_2_gents" to="." method="_on_Check_2_gents_timeout"]
 [connection signal="timeout" from="Total_timer" to="." method="_on_Total_timer_timeout"]
+[connection signal="timeout" from="Fin_timer" to="." method="_on_Fin_timer_timeout"]

@@ -4,6 +4,9 @@ signal meteor_has_down
 
 var trash = load("res://Entity/Scene3/Trash.tscn")
 var car_owner = load("res://Entity/Scene3/Car_owner.tscn")
+var thing = load("res://Entity/Scene4/Thing.tscn")
+var portal = load("res://Entity/Scene4/Portal.tscn")
+
 var car_owner_now = null
 
 onready var pos_list = [$TrashPos/Pos1, $TrashPos/Pos2, $TrashPos/Pos3, $TrashPos/Pos4]
@@ -14,8 +17,10 @@ onready var meteor = $Meteor
 onready var dead_timer = $Dead_timer
 onready var trash_spawn_timer = $Trash_spawn_timer
 onready var meteor_timer = $Meteor_timer
+onready var wait_portal_time = $Wait_portal_timer
 
 var is_meteor_moving = false
+var portal_incoming = false
 
 func _ready():
 	seed(Time.get_unix_time_from_system())
@@ -23,6 +28,7 @@ func _ready():
 	trash_spawn_timer.start()
 	meteor_timer.wait_time = Global.DOWN_METEOR
 	meteor_timer.start()
+	wait_portal_time.wait_time = Global.WAIT_PORTAL_3
 
 func _physics_process(delta):
 	if royal_man != null:
@@ -36,6 +42,9 @@ func _physics_process(delta):
 		else:
 			meteor.position = lerp(meteor.position, meteor_coord_miss.position, 0.5*delta)
 			meteor.scale = lerp(meteor.scale, Vector2(4, 4), delta)
+	if Global.item_sending and portal_incoming == false:
+		portal_incoming = true
+		wait_portal_time.start()
 
 func _on_Trash_spawn_timer_timeout():
 	var new_trash = trash.instance()
@@ -59,3 +68,17 @@ func _on_Meteor_timer_timeout():
 
 func _on_Dead_timer_timeout():
 	emit_signal("meteor_has_down")
+
+
+func _on_Wait_portal_timer_timeout():
+	$Wait_thing_timer.start()
+	var new_portal = portal.instance()
+	add_child(new_portal)
+	new_portal.position = $TrashPos/Pos3.position
+
+
+func _on_Wait_thing_timer_timeout():
+	var new_thing = thing.instance()
+	add_child(new_thing)
+	new_thing.position = $TrashPos/Pos3.position
+	new_thing.linear_velocity = Vector2(-150, 0)

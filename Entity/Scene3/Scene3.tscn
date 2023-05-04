@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Data/Texture/crystall_ball.png" type="Texture" id=1]
 [ext_resource path="res://Entity/Scene3/Scene3.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Entity/Scene3/Car.gd" type="Script" id=7]
 [ext_resource path="res://Entity/Scene3/Royal.gd" type="Script" id=8]
 [ext_resource path="res://Data/Texture/Asteroid 01 - Base.png" type="Texture" id=9]
+[ext_resource path="res://Data/Sprites/piano.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 362, 36.5 )
@@ -134,11 +135,8 @@ shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Royal"]
 position = Vector2( 1.06642, 2.99998 )
-scale = Vector2( 4.0166, 5.75 )
-texture = ExtResource( 4 )
-hframes = 18
-vframes = 20
-frame = 82
+scale = Vector2( 0.0249336, 0.0356939 )
+texture = ExtResource( 10 )
 
 [node name="Car" type="StaticBody2D" parent="."]
 position = Vector2( -264, 72 )
@@ -186,6 +184,14 @@ position = Vector2( -610, -123 )
 wait_time = 3.0
 one_shot = true
 
+[node name="Wait_portal_timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Wait_thing_timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="Trash_spawn_timer" to="." method="_on_Trash_spawn_timer_timeout"]
 [connection signal="body_entered" from="Royal" to="Royal" method="_on_Royal_body_entered"]
 [connection signal="input_event" from="Royal" to="Royal" method="_on_Royal_input_event"]
@@ -193,3 +199,5 @@ one_shot = true
 [connection signal="timeout" from="Car/Alarm_timer" to="Car" method="_on_Alarm_timer_timeout"]
 [connection signal="timeout" from="Meteor_timer" to="." method="_on_Meteor_timer_timeout"]
 [connection signal="timeout" from="Dead_timer" to="." method="_on_Dead_timer_timeout"]
+[connection signal="timeout" from="Wait_portal_timer" to="." method="_on_Wait_portal_timer_timeout"]
+[connection signal="timeout" from="Wait_thing_timer" to="." method="_on_Wait_thing_timer_timeout"]

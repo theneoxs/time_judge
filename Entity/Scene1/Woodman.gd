@@ -49,6 +49,7 @@ func _on_Dead_timer_timeout():
 
 
 func _on_Wait_after_kill_timeout():
+	Global.is_first_woodman = true
 	is_back = true
 	is_stopped = false
 	is_move = true
@@ -61,3 +62,8 @@ func _on_Wait_after_kill_timeout():
 
 func flip_anim():
 	$AnimatedSprite.flip_h = !$AnimatedSprite.flip_h
+
+
+func _on_Woodman_input_event(viewport, event, shape_idx):
+	if Input.is_action_just_pressed("click") and is_back == false and Global.is_first_woodman == true:
+		_on_Wait_after_kill_timeout()

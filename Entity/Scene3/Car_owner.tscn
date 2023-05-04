@@ -442,7 +442,7 @@ start_node = "idle"
 
 [node name="Car_owner" type="KinematicBody2D"]
 collision_layer = 4
-collision_mask = 16
+collision_mask = 144
 input_pickable = true
 script = ExtResource( 7 )
 

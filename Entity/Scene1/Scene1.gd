@@ -27,8 +27,8 @@ func _physics_process(delta):
 			woodman_now.queue_free()
 			woodman_now = null
 			if Global.bear_is_dead:
-				woodman_timer.start()
 				woodman_timer.wait_time = 5
+				woodman_timer.start()
 			
 
 func spawn_bear(pos = 0):
