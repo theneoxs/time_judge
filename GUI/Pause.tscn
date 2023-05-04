@@ -1,17 +1,53 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Button_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Data/dogica.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://GUI/Pause.gd" type="Script" id=3]
+[ext_resource path="res://GUI/Wooden Pixel Art GUI 32x32.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 739.008, 642.047, 90.084, 93.9812 )
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 35
-outline_color = Color( 0, 0, 0, 1 )
-extra_spacing_char = -6
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 706.007, 1025.41, 92.2878, 30.7185 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 705.818, 1088.87, 92.3935, 31.2487 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 705.814, 1055.97, 92.3406, 32.3954 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+outline_size = 2
+outline_color = Color( 0.137255, 0.145098, 0.164706, 1 )
 font_data = ExtResource( 2 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 417.766, 1025.33, 92.5288, 30.7144 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 4 )
+region = Rect2( 417.718, 1088.91, 92.6573, 31.3569 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 417.746, 1055.89, 92.5288, 32.3851 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 737.856, 735.874, 92.2947, 34.1312 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 709.85, 960.766, 6.29712, 13.9119 )
 
 [node name="Pause" type="Control"]
 anchor_right = 1.0
@@ -21,9 +57,20 @@ script = ExtResource( 3 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.184314 )
+color = Color( 0, 0, 0, 0.180392 )
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -431.0
+margin_top = -447.0
+margin_right = 431.0
+margin_bottom = 447.0
+color = Color( 1, 1, 1, 0 )
+
+[node name="ColorRect" type="TextureRect" parent="ColorRect/ColorRect2"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -32,20 +79,24 @@ margin_left = -433.0
 margin_top = -310.0
 margin_right = 433.0
 margin_bottom = 310.0
+texture = SubResource( 3 )
+expand = true
 
-[node name="Checklist" type="Control" parent="ColorRect/ColorRect"]
+[node name="Checklist" type="Control" parent="ColorRect/ColorRect2/ColorRect"]
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 36.0
-margin_top = -276.0
-margin_right = 466.0
-margin_bottom = 276.0
+margin_left = -215.0
+margin_top = -239.0
+margin_right = 215.0
+margin_bottom = 239.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ColorRect/Checklist"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ColorRect2/ColorRect/Checklist"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Header" type="Label" parent="ColorRect/ColorRect/Checklist/VBoxContainer"]
+[node name="Header" type="Label" parent="ColorRect/ColorRect2/ColorRect/Checklist/VBoxContainer"]
 margin_right = 430.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 0, 40 )
@@ -55,7 +106,7 @@ text = "Check List"
 align = 1
 valign = 1
 
-[node name="Header2" type="Label" parent="ColorRect/ColorRect/Checklist/VBoxContainer"]
+[node name="Header2" type="Label" parent="ColorRect/ColorRect2/ColorRect/Checklist/VBoxContainer"]
 margin_top = 44.0
 margin_right = 430.0
 margin_bottom = 84.0
@@ -65,7 +116,7 @@ custom_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
 
-[node name="List1" type="Label" parent="ColorRect/ColorRect/Checklist/VBoxContainer"]
+[node name="List1" type="Label" parent="ColorRect/ColorRect2/ColorRect/Checklist/VBoxContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_top = 88.0
 margin_right = 430.0
@@ -76,7 +127,7 @@ text = "Kill bear"
 align = 1
 valign = 1
 
-[node name="List2" type="Label" parent="ColorRect/ColorRect/Checklist/VBoxContainer"]
+[node name="List2" type="Label" parent="ColorRect/ColorRect2/ColorRect/Checklist/VBoxContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_top = 132.0
 margin_right = 430.0
@@ -87,7 +138,7 @@ text = "Chase away 6 bears"
 align = 1
 valign = 1
 
-[node name="List3" type="Label" parent="ColorRect/ColorRect/Checklist/VBoxContainer"]
+[node name="List3" type="Label" parent="ColorRect/ColorRect2/ColorRect/Checklist/VBoxContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_top = 176.0
 margin_right = 430.0
@@ -98,7 +149,7 @@ text = "Return min 2 villager"
 align = 1
 valign = 1
 
-[node name="List4" type="Label" parent="ColorRect/ColorRect/Checklist/VBoxContainer"]
+[node name="List4" type="Label" parent="ColorRect/ColorRect2/ColorRect/Checklist/VBoxContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_top = 220.0
 margin_right = 430.0
@@ -109,7 +160,7 @@ text = "Warden self return"
 align = 1
 valign = 1
 
-[node name="List5" type="Label" parent="ColorRect/ColorRect/Checklist/VBoxContainer"]
+[node name="List5" type="Label" parent="ColorRect/ColorRect2/ColorRect/Checklist/VBoxContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_top = 264.0
 margin_right = 430.0
@@ -120,46 +171,126 @@ text = "Gentleman not leave"
 align = 1
 valign = 1
 
-[node name="Return" type="Button" parent="ColorRect/ColorRect"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -303.0
-margin_top = 12.0
-margin_right = -102.0
-margin_bottom = 60.0
+[node name="Return" type="TextureButton" parent="ColorRect/ColorRect2/ColorRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -354.0
+margin_top = 13.0
+margin_right = -39.0
+margin_bottom = 103.0
 rect_pivot_offset = Vector2( 101, 24 )
-custom_fonts/font = ExtResource( 1 )
-text = "Return"
+texture_normal = SubResource( 5 )
+texture_pressed = SubResource( 6 )
+texture_hover = SubResource( 7 )
+expand = true
 
-[node name="Exit" type="Button" parent="ColorRect/ColorRect"]
-anchor_left = 1.0
+[node name="Label" type="Label" parent="ColorRect/ColorRect2/ColorRect/Return"]
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -303.0
-margin_top = 95.0
-margin_right = -102.0
-margin_bottom = 143.0
+margin_left = -120.0
+margin_top = -18.0
+margin_right = 120.0
+margin_bottom = 12.0
+custom_colors/font_color = Color( 0.380392, 0.368627, 0.423529, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Resume"
+
+[node name="Exit" type="TextureButton" parent="ColorRect/ColorRect2/ColorRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 38.0
+margin_top = 13.0
+margin_right = 353.0
+margin_bottom = 103.0
 rect_pivot_offset = Vector2( 101, 24 )
-custom_fonts/font = ExtResource( 1 )
+texture_normal = SubResource( 9 )
+texture_pressed = SubResource( 2 )
+texture_hover = SubResource( 10 )
+expand = true
+
+[node name="Label" type="Label" parent="ColorRect/ColorRect2/ColorRect/Exit"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -19.0
+margin_right = 80.0
+margin_bottom = 11.0
+custom_colors/font_color = Color( 0.380392, 0.368627, 0.423529, 1 )
+custom_fonts/font = SubResource( 8 )
 text = "Exit"
 
-[node name="Label" type="Label" parent="ColorRect/ColorRect"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -327.0
-margin_top = -172.0
-margin_right = -81.0
-margin_bottom = -48.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 2 )
-text = "Pause"
-align = 1
-valign = 1
+[node name="TextureRect" type="TextureRect" parent="ColorRect/ColorRect2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -210.0
+margin_top = 18.0
+margin_right = 211.0
+margin_bottom = 142.0
+texture = SubResource( 4 )
+expand = true
 
-[connection signal="pressed" from="ColorRect/ColorRect/Return" to="." method="_on_Return_pressed"]
-[connection signal="pressed" from="ColorRect/ColorRect/Exit" to="." method="_on_Exit_pressed"]
+[node name="Label" type="Label" parent="ColorRect/ColorRect2/TextureRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.0
+margin_top = 36.0
+margin_right = 100.0
+margin_bottom = 66.0
+custom_colors/font_color = Color( 0.380392, 0.368627, 0.423529, 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Pause"
+
+[node name="ColorRect2" type="TextureRect" parent="ColorRect/ColorRect2"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 117.0
+margin_top = -147.0
+margin_right = 144.0
+margin_bottom = -124.0
+rect_pivot_offset = Vector2( -143, -114 )
+texture = SubResource( 11 )
+expand = true
+
+[node name="ColorRect3" type="TextureRect" parent="ColorRect/ColorRect2"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 326.0
+margin_top = -146.0
+margin_right = 353.0
+margin_bottom = -123.0
+rect_pivot_offset = Vector2( 14, 9 )
+texture = SubResource( 11 )
+expand = true
+
+[node name="ColorRect4" type="TextureRect" parent="ColorRect/ColorRect2"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 512.0
+margin_top = -146.0
+margin_right = 539.0
+margin_bottom = -123.0
+rect_pivot_offset = Vector2( 14, 9 )
+texture = SubResource( 11 )
+expand = true
+
+[node name="ColorRect5" type="TextureRect" parent="ColorRect/ColorRect2"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 713.0
+margin_top = -146.0
+margin_right = 740.0
+margin_bottom = -123.0
+rect_pivot_offset = Vector2( 14, 9 )
+texture = SubResource( 11 )
+expand = true
+
+[connection signal="pressed" from="ColorRect/ColorRect2/ColorRect/Return" to="." method="_on_Return_pressed"]
+[connection signal="pressed" from="ColorRect/ColorRect2/ColorRect/Exit" to="." method="_on_Exit_pressed"]
