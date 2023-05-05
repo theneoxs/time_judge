@@ -11,7 +11,10 @@ var is_can_up = false
 var is_once_down = false
 var is_once_picked = false
 var is_down = false
+
 func _ready():
+	down_timer.wait_time = Global.DOWN_STAROSTA
+	down_timer.start()
 	anim_dots.travel("attack1")
 
 

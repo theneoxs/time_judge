@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Data/Texture/image_2023-05-02_14-31-17.png" type="Texture" id=1]
 [ext_resource path="res://Entity/Scene2/Scene2.gd" type="Script" id=2]
 [ext_resource path="res://Entity/Scene2/Man.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Entity/Scene2/Starosta.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Data/Sprites/MiniBear.png" type="Texture" id=5]
+[ext_resource path="res://Button_font.tres" type="DynamicFont" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 362, 36.5 )
@@ -30,7 +31,7 @@ position = Vector2( -237, 13 )
 position = Vector2( -66, -55 )
 
 [node name="Man3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 62, -14 )
+position = Vector2( 64, -50 )
 
 [node name="Starosta" parent="." instance=ExtResource( 4 )]
 position = Vector2( 220, -51 )
@@ -65,7 +66,7 @@ position = Vector2( -263.999, 61 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="House"]
-position = Vector2( 52, 27.5 )
+position = Vector2( 52, -1.37502 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="House"]
@@ -87,7 +88,7 @@ hframes = 10
 vframes = 8
 
 [node name="Sprite3" type="Sprite" parent="House"]
-position = Vector2( 59.3913, 11 )
+position = Vector2( 59.3913, -17.875 )
 scale = Vector2( 3.77441, 0.570313 )
 texture = ExtResource( 5 )
 hframes = 10
@@ -111,6 +112,21 @@ position = Vector2( -401, 133 )
 [node name="Down_starosta" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -335.0
+margin_top = -144.0
+margin_right = 336.0
+margin_bottom = -130.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 6 )
+text = "Help mans complete village"
+align = 1
+valign = 1
 
 [connection signal="timeout" from="Gentleman_incoming" to="." method="_on_Gentleman_incoming_timeout"]
 [connection signal="timeout" from="Down_starosta" to="." method="_on_Down_starosta_timeout"]

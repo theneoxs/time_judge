@@ -66,4 +66,3 @@ func _on_Made_a_deal_timeout():
 	flip_anim()
 	move_vector *= -1
 	move_and_collide(move_vector)
-	Global.gentleman_leave = true

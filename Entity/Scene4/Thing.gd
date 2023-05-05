@@ -20,4 +20,5 @@ func _on_Clear_timer_timeout():
 func _on_Thing_body_entered(body):
 	if body.name == "Car_owner":
 		Global.item_is_picked = true
+		body.reverse()
 		queue_free()

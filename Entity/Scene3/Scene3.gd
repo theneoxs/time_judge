@@ -78,7 +78,8 @@ func _on_Wait_portal_timer_timeout():
 
 
 func _on_Wait_thing_timer_timeout():
-	var new_thing = thing.instance()
-	add_child(new_thing)
-	new_thing.position = $TrashPos/Pos3.position
-	new_thing.linear_velocity = Vector2(-150, 0)
+	if Global.count_trash <= 12 and has_node("Portal"):
+		var new_thing = thing.instance()
+		add_child(new_thing)
+		new_thing.position = $TrashPos/Pos3.position
+		new_thing.linear_velocity = Vector2(-150, 0)

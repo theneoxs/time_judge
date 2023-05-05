@@ -13,6 +13,7 @@ onready var woodman_timer = $Woodman_spawn_timer
 
 func _ready():
 	woodman_timer.wait_time = Global.WAIT_WOODCUTTER
+	woodman_timer.start()
 	seed(Time.get_unix_time_from_system())
 	spawn_bear()
 

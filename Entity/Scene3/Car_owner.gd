@@ -29,4 +29,9 @@ func _physics_process(delta):
 func flip_anim():
 	$AnimatedSprite.flip_h = !$AnimatedSprite.flip_h
 
+func reverse():
+	move_vector *= -1
+	is_move = true
+	move_and_collide(move_vector)
+	is_stopped = false
 

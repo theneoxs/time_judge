@@ -1,18 +1,20 @@
 extends Node
 
-var TOTAL_TIME = 600
-var WAIT_WOODCUTTER = 10
-var CHECK_1_BEAR = 300
-var CHECK_2_GENTS = 420
-var DOWN_STAROSTA = 250
-var GENTLEMAN_INCOMING = 350
+var is_start_game = false
+
+var TOTAL_TIME = 300
+var WAIT_WOODCUTTER = 100
+var CHECK_1_BEAR = 200
+var CHECK_2_GENTS = 250
+var DOWN_STAROSTA = 150
+var GENTLEMAN_INCOMING = 180
 var COUNT_BEAR = 6
-var DOWN_METEOR = 550
-var DOWN_PIANO = 330
+var DOWN_METEOR = 270
+var DOWN_PIANO = 180
 var TIME_CREATE_TRASH = 5
 var COUNT_PORTAL = 10
-var TIME_CREATE_PORTAL = 3
-var TIME_CREATE_CYBORG = 10
+var TIME_CREATE_PORTAL = 7
+var TIME_CREATE_CYBORG = 15
 var WAIT_PORTAL_3 = 10
 
 var bear_is_dead = false
@@ -32,3 +34,4 @@ var cyborg_repait = 0
 var item_sending = false
 
 var is_first_woodman = false
+var is_throw_item = false

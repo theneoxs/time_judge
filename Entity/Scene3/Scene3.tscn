@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Data/Texture/crystall_ball.png" type="Texture" id=1]
 [ext_resource path="res://Entity/Scene3/Scene3.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Entity/Scene3/Royal.gd" type="Script" id=8]
 [ext_resource path="res://Data/Texture/Asteroid 01 - Base.png" type="Texture" id=9]
 [ext_resource path="res://Data/Sprites/piano.png" type="Texture" id=10]
+[ext_resource path="res://Button_font.tres" type="DynamicFont" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 362, 36.5 )
@@ -80,7 +81,7 @@ position = Vector2( 137, -45 )
 position = Vector2( 258, 20 )
 
 [node name="Top" type="StaticBody2D" parent="."]
-position = Vector2( 17, -24 )
+position = Vector2( 17, 11 )
 collision_layer = 8
 collision_mask = 16
 
@@ -100,7 +101,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="Trash_can" type="StaticBody2D" parent="."]
-position = Vector2( 17, -24 )
+position = Vector2( -590, -32 )
 collision_layer = 8
 collision_mask = 16
 
@@ -117,10 +118,10 @@ vframes = 20
 frame = 82
 
 [node name="Header" parent="." instance=ExtResource( 5 )]
-position = Vector2( -91, -121 )
+position = Vector2( -91, -87 )
 
 [node name="Royal" type="RigidBody2D" parent="."]
-position = Vector2( -47, -122 )
+position = Vector2( -47, -88 )
 collision_layer = 32
 collision_mask = 40
 input_pickable = true
@@ -191,6 +192,21 @@ one_shot = true
 [node name="Wait_thing_timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -335.0
+margin_top = -144.0
+margin_right = 336.0
+margin_bottom = -130.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "Clear trash into trashcan"
+align = 1
+valign = 1
 
 [connection signal="timeout" from="Trash_spawn_timer" to="." method="_on_Trash_spawn_timer_timeout"]
 [connection signal="body_entered" from="Royal" to="Royal" method="_on_Royal_body_entered"]

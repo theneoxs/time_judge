@@ -11,8 +11,6 @@ onready var down_starosta = $Down_starosta
 onready var gentleman_incoming = $Gentleman_incoming
 
 func _ready():
-	down_starosta.wait_time = Global.DOWN_STAROSTA
-	down_starosta.start()
 	gentleman_incoming.wait_time = Global.GENTLEMAN_INCOMING
 	gentleman_incoming.start()
 

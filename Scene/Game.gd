@@ -11,10 +11,13 @@ onready var timer_check_1 = $Timer_check_1
 var time_check_1_now = Global.CHECK_1_BEAR
 onready var timer_check_2 = $Timer_check_2
 var time_check_2_now = Global.CHECK_2_GENTS
+onready var timer_check_3 = $Timer_check_3
+var time_check_3_now = Global.DOWN_METEOR+2
 
 onready var dead_timer = $Dead_timer
 onready var check_1_bear = $Check_1_bear
 onready var check_2_gents = $Check_2_gents
+onready var check_3_city = $Check_3_city
 onready var total_timer = $Total_timer
 onready var noise1 = $Sprite
 onready var noise2 = $Sprite2
@@ -29,7 +32,12 @@ var check_fail = false
 
 var start_fin = false
 
+var is_started = false
+
 func _ready():
+	fin_screen.color = Color("8f6854")
+	fin_screen.modulate.a = 1
+	
 	check_1_bear.wait_time = Global.CHECK_1_BEAR
 	timer_check_1.max_value = Global.CHECK_1_BEAR
 	timer_check_1.value = time_check_1_now
@@ -42,21 +50,34 @@ func _ready():
 	timer_check_2.max_value = Global.CHECK_2_GENTS
 	timer_check_2.value = time_check_2_now
 	
+	check_3_city.wait_time = Global.DOWN_METEOR+2
+	timer_check_3.max_value = Global.DOWN_METEOR+2
+	timer_check_3.value = time_check_3_now
+	
 	total_timer.start()
 	check_1_bear.start()
 	check_2_gents.start()
+	check_3_city.start()
 	noise1.modulate.a = 0
 	noise2.modulate.a = 0
 	noise3.modulate.a = 0
 	
 
 func _process(delta):
+	if !is_started:
+		fin_screen.modulate.a = lerp(fin_screen.modulate.a, -0.5, delta)
+		if fin_screen.modulate.a <= 0.05:
+			fin_screen.modulate.a = 0
+			is_started = true
+	
 	time_now -= delta
 	timer_total_prog.value = time_now
 	time_check_1_now -= delta
 	timer_check_1.value = time_check_1_now
 	time_check_2_now -= delta
 	timer_check_2.value = time_check_2_now
+	time_check_3_now -= delta
+	timer_check_3.value = time_check_3_now
 	if start1:
 		noise1.modulate.a = lerp(noise1.modulate.a, 1, delta)
 	if start2:
@@ -100,6 +121,7 @@ func _on_Check_1_bear_timeout():
 
 func _on_Total_timer_timeout():
 	start_fin = true
+	fin_screen.color = Color(1, 1, 1)
 	fin_timer.start()
 
 
@@ -117,3 +139,8 @@ func _on_Fin_timer_timeout():
 		get_tree().change_scene("res://GUI/Game Over.tscn")
 	else:
 		get_tree().change_scene("res://GUI/Game complete.tscn")
+
+
+func _on_Check_3_city_timeout():
+	if !Global.item_is_picked:
+		active_noise(2)

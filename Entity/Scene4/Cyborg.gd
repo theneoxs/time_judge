@@ -62,10 +62,11 @@ func stand_ready():
 
 
 func _on_Throw_timer_timeout():
-	if !get_parent().has_node("Thing"):
+	if !get_parent().has_node("Thing") and !Global.is_throw_item:
 		var new_thing = thing.instance()
 		get_parent().add_child(new_thing)
 		new_thing.global_position = global_position
 		new_thing.linear_velocity = Vector2(-150, -300)
+		Global.is_throw_item = true
 	is_stopped = false
 	anim_dots.travel("walk")

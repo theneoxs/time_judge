@@ -24,6 +24,28 @@ func _process(delta):
 		$ColorRect/ColorRect2/ColorRect/Checklist/VBoxContainer/List5.modulate = Color(0.87, 0, 0, 1)
 	else:
 		$ColorRect/ColorRect2/ColorRect/Checklist/VBoxContainer/List5.modulate = Color(0.06, 0.6, 0, 1)
+	if Global.count_trash >= 12:
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List1.modulate = Color(0.87, 0, 0, 1)
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List1.text = "Count less than 12 trash (" + str(Global.count_trash) + ")"
+	else:
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List1.modulate = Color(0.06, 0.6, 0, 1)
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List1.text = "Count less than 12 trash (" + str(Global.count_trash) + ")"
+	if Global.car_crashed:
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List2.modulate = Color(0.06, 0.6, 0, 1)
+	else:
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List2.modulate = Color(0.87, 0, 0, 1)
+	if Global.item_is_picked:
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List3.modulate = Color(0.06, 0.6, 0, 1)
+	else:
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List3.modulate = Color(0.87, 0, 0, 1)
+	if Global.closing_portal >= 10:
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List4.modulate = Color(0.06, 0.6, 0, 1)
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List4.text = "Close "+str(Global.closing_portal)+" portal (" + str(Global.closing_portal) + ")"
+	else:
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List4.text = "Close "+str(Global.closing_portal)+" portal (" + str(Global.closing_portal) + ")"
+	if Global.item_sending:
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List5.modulate = Color(0.06, 0.6, 0, 1)
+	
 
 
 func _on_Exit_pressed():

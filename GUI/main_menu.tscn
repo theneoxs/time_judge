@@ -127,6 +127,15 @@ custom_colors/font_color = Color( 0.380392, 0.368627, 0.423529, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Authors"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.560784, 0.407843, 0.329412, 1 )
+
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="pressed" from="Background/Exit_btn" to="." method="_on_Exit_btn_pressed"]
 [connection signal="pressed" from="Background/Start_btn" to="." method="_on_Start_btn_pressed"]
 [connection signal="pressed" from="Background/Author_btn" to="." method="_on_Author_btn_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

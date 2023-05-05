@@ -9,7 +9,7 @@ height = 14.0
 
 [node name="Thing" type="RigidBody2D"]
 collision_layer = 128
-collision_mask = 136
+collision_mask = 152
 input_pickable = true
 mass = 50.0
 gravity_scale = 2.0
