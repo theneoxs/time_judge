@@ -155,3 +155,14 @@ func _on_Check_3_city_timeout():
 
 func _on_Game_tree_exiting():
 	Global.stop_Game_sound()
+
+
+func _on_Return_mouse_entered():
+	Global.play_focus()
+
+
+func _on_Return_pressed():
+	Global.play_click()
+	if !has_node("Pause"):
+		$In_pause.play()
+		add_child(load("res://GUI/Pause.tscn").instance())
