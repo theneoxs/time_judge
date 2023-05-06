@@ -1,12 +1,7 @@
 extends Control
 
-<<<<<<< Updated upstream
 onready var sound_btn = $ColorRect/ColorRect2/TextureRect2/Sound
 onready var music_btn = $ColorRect/ColorRect2/TextureRect2/Music
-=======
-onready var sound_btn = $ColorRect/ColorRect2/ColorRect/Control/Sound
-onready var music_btn = $ColorRect/ColorRect2/ColorRect/Control/Music
->>>>>>> Stashed changes
 
 func _ready():
 	set_icon_status()
