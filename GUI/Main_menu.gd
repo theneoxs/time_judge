@@ -32,7 +32,6 @@ func _on_Exit_btn_pressed():
 
 func _on_Start_btn_pressed():
 	Global.play_click()
-	Global.silence_main_menu_sound()
 	$Timer.start()
 	is_start = true
 	

@@ -143,92 +143,30 @@ theme = SubResource( 14 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 15 )
 bbcode_enabled = true
-bbcode_text = "Forest
-- [url]https://sanctumpixel.itch.io/forest-lite-pixel-art-tileset[/url]
+bbcode_text = "You are a timeless trainee judge following the life of one place in four different times. Based on the results of this work, you may be promoted ... or fired.
+Your task is to save all 4 timelines. To do this, you need to follow simple steps:
+- [u]Chase away[/u] the bears
+- [u]Help the fallen[/u] villagers complete the village
+- [u]Clear[/u] the street of trash
+- [u]Close normal portals[/u] and repair shorted cyborgs
+Listen carefully to the sounds, they will help you react in time.
 
-Village
-- [url]https://anokolisa.itch.io/legacy-adventure-pack[/url]
+At certain moments, non-standard actions will occur in each of the lines. What to do with them is up to you, but all four lines will be saved only when all the tasks in the tasklist are completed (green).
+Timelines have their own points of no return, coming after a certain time. If the line does not allow others to exist, the game is lost.
 
-Free 3 Cyberpunk Sprites Pixel Art 
-- [url]https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art[/url]
+You have 5 minutes to save the lines."
+text = "You are a timeless trainee judge following the life of one place in four different times. Based on the results of this work, you may be promoted ... or fired.
+Your task is to save all 4 timelines. To do this, you need to follow simple steps:
+- Chase away the bears
+- Help the fallen villagers complete the village
+- Clear the street of trash
+- Close normal portals and repair shorted cyborgs
+Listen carefully to the sounds, they will help you react in time.
 
-Portal 
-- [url]https://ruxar.itch.io/portal[/url]
+At certain moments, non-standard actions will occur in each of the lines. What to do with them is up to you, but all four lines will be saved only when all the tasks in the tasklist are completed (green).
+Timelines have their own points of no return, coming after a certain time. If the line does not allow others to exist, the game is lost.
 
-Modern City 
-- [url]https://free-game-assets.itch.io/free-city-backgrounds-pixel-art[/url]
-
-Red Cars 
-- [url]https://silverm.itch.io/pixel-realistic-cars[/url]
-
-Meteor 
-- [url]https://foozlecc.itch.io/void-environment-pack[/url]
-
-Trash&Chest 
-- [url]https://codemanu.itch.io/pixel-art-wasteland-asset-pack[/url]
-
-Animal 
-- [url]https://lyaseek.itch.io/miniffanimals[/url]
-
-Villager 
-- [url]https://free-game-assets.itch.io/villagers-sprite-sheets-free-pixel-art-pack[/url]
-
-Characters 
-- [url]https://free-game-assets.itch.io/free-3-character-sprite-pixel-art[/url]
-
-Sounds 
-- [url]https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack[/url]
-- [url]https://leohpaz.itch.io/rpg-essentials-sfx-free[/url]
-
-Music 
-- [url]https://tallbeard.itch.io/music-loop-bundle[/url]
-
-Icons
-- [url]https://www.flaticon.com/free-icon/mute_727240[/url]
-- [url]https://www.flaticon.com/free-icon/musical-note_461146[/url]"
-text = "Forest
-- https://sanctumpixel.itch.io/forest-lite-pixel-art-tileset
-
-Village
-- https://anokolisa.itch.io/legacy-adventure-pack
-
-Free 3 Cyberpunk Sprites Pixel Art 
-- https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art
-
-Portal 
-- https://ruxar.itch.io/portal
-
-Modern City 
-- https://free-game-assets.itch.io/free-city-backgrounds-pixel-art
-
-Red Cars 
-- https://silverm.itch.io/pixel-realistic-cars
-
-Meteor 
-- https://foozlecc.itch.io/void-environment-pack
-
-Trash&Chest 
-- https://codemanu.itch.io/pixel-art-wasteland-asset-pack
-
-Animal 
-- https://lyaseek.itch.io/miniffanimals
-
-Villager 
-- https://free-game-assets.itch.io/villagers-sprite-sheets-free-pixel-art-pack
-
-Characters 
-- https://free-game-assets.itch.io/free-3-character-sprite-pixel-art
-
-Sounds 
-- https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack
-- https://leohpaz.itch.io/rpg-essentials-sfx-free
-
-Music 
-- https://tallbeard.itch.io/music-loop-bundle
-
-Icons
-- https://www.flaticon.com/free-icon/mute_727240
-- https://www.flaticon.com/free-icon/musical-note_461146"
+You have 5 minutes to save the lines."
 
 [node name="Play_btn" type="TextureButton" parent="TextureRect"]
 anchor_left = 0.5
@@ -284,5 +222,14 @@ rect_pivot_offset = Vector2( 10.5, 8 )
 texture = SubResource( 18 )
 expand = true
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.560784, 0.407843, 0.329412, 1 )
+
+[node name="Wait_timer" type="Timer" parent="."]
+
 [connection signal="meta_clicked" from="TextureRect/TextureRect/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
 [connection signal="pressed" from="TextureRect/Play_btn" to="." method="_on_Play_btn_pressed"]
+[connection signal="timeout" from="Wait_timer" to="." method="_on_Wait_timer_timeout"]

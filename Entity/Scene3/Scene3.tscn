@@ -35,7 +35,7 @@ extents = Vector2( 9, 170.5 )
 extents = Vector2( 67, 8.25 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 18, 24.8125 )
+extents = Vector2( 18, 13.9063 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
@@ -158,12 +158,12 @@ contact_monitor = true
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Royal"]
-position = Vector2( 1.06641, 1 )
+position = Vector2( 1.06641, 11.9063 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Royal"]
-position = Vector2( 1.06642, 2.99998 )
-scale = Vector2( 0.0249336, 0.0356939 )
+position = Vector2( 1, 8 )
+scale = Vector2( 0.0249336, 0.0243469 )
 texture = ExtResource( 10 )
 
 [node name="Car" type="StaticBody2D" parent="."]
