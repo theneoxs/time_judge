@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://GUI/Author.gd" type="Script" id=1]
 [ext_resource path="res://Data/dogica.ttf" type="DynamicFontData" id=2]
@@ -28,15 +28,15 @@ font_data = ExtResource( 2 )
 atlas = ExtResource( 3 )
 region = Rect2( 739.008, 642.047, 90.084, 93.9812 )
 
+[sub_resource type="DynamicFont" id=7]
+size = 28
+extra_spacing_top = 15
+font_data = ExtResource( 2 )
+
 [sub_resource type="DynamicFont" id=6]
 size = 28
 outline_size = 1
 outline_color = Color( 0.309804, 0.352941, 0.419608, 1 )
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 28
-extra_spacing_top = 15
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=15]
@@ -81,6 +81,20 @@ VScrollBar/styles/scroll_focus = SubResource( 19 )
 extra_spacing_top = 16
 font_data = ExtResource( 2 )
 
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 737.856, 735.874, 92.2947, 34.1312 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 40
+outline_size = 2
+outline_color = Color( 0.137255, 0.145098, 0.164706, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 709.85, 960.766, 6.29712, 13.9119 )
+
 [node name="Author" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -98,9 +112,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -177.0
-margin_top = 332.0
+margin_top = 320.0
 margin_right = 183.0
-margin_bottom = 421.0
+margin_bottom = 409.0
 texture_normal = SubResource( 1 )
 texture_pressed = SubResource( 2 )
 texture_hover = SubResource( 3 )
@@ -126,27 +140,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -733.0
-margin_top = -362.0
-margin_right = -64.0
-margin_bottom = 307.0
+margin_left = -710.0
+margin_top = -303.0
+margin_right = -41.0
+margin_bottom = 312.0
 texture = SubResource( 5 )
 expand = true
-
-[node name="Label" type="Label" parent="ColorRect/Authors"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -155.5
-margin_top = -228.5
-margin_right = 165.5
-margin_bottom = -214.5
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
-text = "Authors"
-align = 1
-valign = 1
 
 [node name="Label2" type="Label" parent="ColorRect/Authors"]
 anchor_left = 0.5
@@ -154,9 +153,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -342.5
-margin_top = -134.5
+margin_top = -177.5
 margin_right = 342.5
-margin_bottom = -57.5
+margin_bottom = -100.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Made by
@@ -170,9 +169,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -342.5
-margin_top = -15.5
+margin_top = -65.5
 margin_right = 342.5
-margin_bottom = 61.5
+margin_bottom = 51.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Designer
@@ -186,9 +185,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -342.5
-margin_top = 97.5
+margin_top = 92.5
 margin_right = 342.5
-margin_bottom = 174.5
+margin_bottom = 169.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Programmer
@@ -202,9 +201,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -141.0
-margin_top = -591.0
+margin_top = -553.0
 margin_right = -48.0
-margin_bottom = -498.0
+margin_bottom = -460.0
 rect_rotation = 29.833
 texture = ExtResource( 5 )
 expand = true
@@ -214,27 +213,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 58.0
-margin_top = -362.0
-margin_right = 727.0
-margin_bottom = 307.0
+margin_left = 43.0
+margin_top = -303.0
+margin_right = 712.0
+margin_bottom = 312.0
 texture = SubResource( 5 )
 expand = true
-
-[node name="Label" type="Label" parent="ColorRect/Refs"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -155.5
-margin_top = -228.5
-margin_right = 165.5
-margin_bottom = -214.5
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 6 )
-text = "Using"
-align = 1
-valign = 1
 
 [node name="Label2" type="Label" parent="ColorRect/Refs"]
 visible = false
@@ -258,10 +242,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -267.5
-margin_top = -180.5
+margin_left = -258.5
+margin_top = -231.5
 margin_right = 267.5
-margin_bottom = 229.5
+margin_bottom = 218.5
 theme = SubResource( 13 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 14 )
@@ -352,6 +336,74 @@ Music
 Icons
 - https://www.flaticon.com/free-icon/mute_727240
 - https://www.flaticon.com/free-icon/musical-note_461146"
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+margin_left = 250.0
+margin_top = 54.0
+margin_right = 600.0
+margin_bottom = 154.0
+texture = SubResource( 20 )
+expand = true
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = -22.0
+margin_right = 145.0
+margin_bottom = 8.0
+custom_colors/font_color = Color( 0.380392, 0.368627, 0.423529, 1 )
+custom_fonts/font = SubResource( 21 )
+text = "Authors"
+align = 1
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -581.0
+margin_top = 54.0
+margin_right = -263.0
+margin_bottom = 154.0
+texture = SubResource( 20 )
+expand = true
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = -22.0
+margin_right = 145.0
+margin_bottom = 8.0
+custom_colors/font_color = Color( 0.380392, 0.368627, 0.423529, 1 )
+custom_fonts/font = SubResource( 21 )
+text = "Using"
+align = 1
+
+[node name="ColorRect7" type="TextureRect" parent="ColorRect"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 659.0
+margin_top = -151.0
+margin_right = 686.0
+margin_bottom = -128.0
+rect_pivot_offset = Vector2( 14, 12 )
+texture = SubResource( 22 )
+expand = true
+
+[node name="ColorRect8" type="TextureRect" parent="ColorRect"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 919.0
+margin_top = -151.0
+margin_right = 946.0
+margin_bottom = -128.0
+rect_pivot_offset = Vector2( 14, 12 )
+texture = SubResource( 22 )
+expand = true
 
 [connection signal="mouse_entered" from="ColorRect/Back_btn" to="." method="_on_Back_btn_mouse_entered"]
 [connection signal="pressed" from="ColorRect/Back_btn" to="." method="_on_Back_btn_pressed"]
