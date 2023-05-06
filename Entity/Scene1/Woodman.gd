@@ -25,14 +25,15 @@ func _physics_process(delta):
 			is_move = false
 			anim_dots.travel("idle")
 			is_stopped = true
-			collision_layer = 1
-			collision_mask = 1
 			if limit_distance != 300:
 				anim_dots.travel("attack1")
 				dead_timer.start()
 	if Global.bear_is_leave == true and is_back == false:
 		_on_Wait_after_kill_timeout()
 
+func set_collide():
+	collision_layer = 1
+	collision_mask = 1
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Bear" and Global.bear_is_dead == false:

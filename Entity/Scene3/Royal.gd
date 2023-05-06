@@ -1,7 +1,6 @@
 extends RigidBody2D
 
 var selected = false
-var is_selected = false
 
 func _physics_process(delta):
 	if selected:
@@ -17,7 +16,7 @@ func _input(event):
 
 
 func _on_Royal_body_entered(body):
-	if body.name == "Car" and !is_selected:
+	if body.name == "Car":
 		Global.car_crashed = true
 		body.alarm()
 	if body.name == "Trash_can":
@@ -26,7 +25,6 @@ func _on_Royal_body_entered(body):
 
 func _on_Royal_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
-		is_selected = true
 		selected = true
 		linear_velocity.y = 0
 		linear_velocity.x = 0

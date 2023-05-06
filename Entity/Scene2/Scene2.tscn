@@ -592,7 +592,6 @@ shape = SubResource( 2 )
 [node name="Gentleman_incoming" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
-autostart = true
 
 [node name="Gentle_pos" type="Position2D" parent="."]
 position = Vector2( -401, 133 )

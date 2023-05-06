@@ -21,6 +21,8 @@ var is_dead = false
 
 func _ready():
 	seed(Time.get_unix_time_from_system())
+	if get_parent().has_node("Woodman"):
+		get_parent().get_node("Woodman").set_collide()
 	
 func _on_Bear_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):

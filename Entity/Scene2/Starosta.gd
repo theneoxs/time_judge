@@ -38,7 +38,6 @@ func _on_Starosta_input_event(viewport, event, shape_idx):
 		linear_velocity.y = 0
 		is_once_down = true
 		is_once_picked = true
-		Global.starosta_selfback = true
 		jump_timer.stop()
 		
 
