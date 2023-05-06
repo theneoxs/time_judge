@@ -153,9 +153,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -342.5
-margin_top = -177.5
+margin_top = -193.5
 margin_right = 342.5
-margin_bottom = -100.5
+margin_bottom = -116.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Made by
@@ -169,9 +169,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -342.5
-margin_top = -65.5
+margin_top = -81.5
 margin_right = 342.5
-margin_bottom = 51.5
+margin_bottom = 35.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Designer
@@ -185,9 +185,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -342.5
-margin_top = 92.5
+margin_top = 76.5
 margin_right = 342.5
-margin_bottom = 169.5
+margin_bottom = 153.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Programmer
@@ -201,9 +201,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -141.0
-margin_top = -553.0
+margin_top = -564.0
 margin_right = -48.0
-margin_bottom = -460.0
+margin_bottom = -471.0
 rect_rotation = 29.833
 texture = ExtResource( 5 )
 expand = true
@@ -290,9 +290,9 @@ Sounds
 Music 
 - [url]https://tallbeard.itch.io/music-loop-bundle[/url]
 
-Icons
-- [url]https://www.flaticon.com/free-icon/mute_727240[/url]
-- [url]https://www.flaticon.com/free-icon/musical-note_461146[/url]"
+Font
+- [url]https://fonts-online.ru/fonts/dogica[/url]
+"
 text = "Forest
 - https://sanctumpixel.itch.io/forest-lite-pixel-art-tileset
 
@@ -333,9 +333,9 @@ Sounds
 Music 
 - https://tallbeard.itch.io/music-loop-bundle
 
-Icons
-- https://www.flaticon.com/free-icon/mute_727240
-- https://www.flaticon.com/free-icon/musical-note_461146"
+Font
+- https://fonts-online.ru/fonts/dogica
+"
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect"]
 margin_left = 250.0
