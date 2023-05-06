@@ -1,7 +1,7 @@
 extends Control
 
-onready var sound_btn = $ColorRect/ColorRect2/ColorRect/Sound
-onready var music_btn = $ColorRect/ColorRect2/ColorRect/Music
+onready var sound_btn = $ColorRect/ColorRect2/TextureRect2/Sound
+onready var music_btn = $ColorRect/ColorRect2/TextureRect2/Music
 
 func _ready():
 	set_icon_status()

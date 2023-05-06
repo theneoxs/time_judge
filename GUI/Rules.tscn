@@ -1,12 +1,88 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://GUI/Rules.gd" type="Script" id=1]
 [ext_resource path="res://GUI/Wooden Pixel Art GUI 32x32.png" type="Texture" id=2]
 [ext_resource path="res://GUI/fon.png" type="Texture" id=3]
+[ext_resource path="res://Data/dogica.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 737.856, 735.874, 92.2947, 34.1312 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 40
+outline_size = 2
+outline_color = Color( 0.137255, 0.145098, 0.164706, 1 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
 region = Rect2( 739.008, 642.047, 90.084, 93.9812 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.882353, 0.890196, 0.921569, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.309804, 0.352941, 0.419608, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.791914, 0.796813, 0.816406, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.309804, 0.352941, 0.419608, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.629349, 0.63551, 0.660156, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.309804, 0.352941, 0.419608, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+content_margin_left = 12.0
+bg_color = Color( 0.309804, 0.352941, 0.419608, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="Theme" id=14]
+VScrollBar/styles/grabber = SubResource( 8 )
+VScrollBar/styles/grabber_highlight = SubResource( 9 )
+VScrollBar/styles/grabber_pressed = SubResource( 10 )
+VScrollBar/styles/scroll = SubResource( 11 )
+VScrollBar/styles/scroll_focus = SubResource( 12 )
+
+[sub_resource type="DynamicFont" id=15]
+extra_spacing_top = 16
+font_data = ExtResource( 4 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 706.007, 1025.41, 92.2878, 30.7185 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 705.818, 1088.87, 92.3935, 31.2487 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 705.814, 1055.97, 92.3406, 32.3954 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 40
+outline_size = 2
+outline_color = Color( 0.137255, 0.145098, 0.164706, 1 )
+extra_spacing_char = -2
+font_data = ExtResource( 4 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 709.85, 960.766, 6.29712, 13.9119 )
 
 [node name="Rules" type="Control"]
 anchor_right = 1.0
@@ -19,14 +95,194 @@ anchor_bottom = 1.0
 texture = ExtResource( 3 )
 expand = true
 
+[node name="TextureRect2" type="TextureRect" parent="TextureRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -159.0
+margin_top = 23.0
+margin_right = 159.0
+margin_bottom = 123.0
+texture = SubResource( 4 )
+expand = true
+
+[node name="Label" type="Label" parent="TextureRect/TextureRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -23.0
+margin_right = 100.0
+margin_bottom = 7.0
+custom_colors/font_color = Color( 0.380392, 0.368627, 0.423529, 1 )
+custom_fonts/font = SubResource( 19 )
+text = "Rules"
+
 [node name="TextureRect" type="TextureRect" parent="TextureRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -461.0
-margin_top = -327.0
-margin_right = 461.0
-margin_bottom = 327.0
+margin_left = -591.0
+margin_top = -334.0
+margin_right = 597.0
+margin_bottom = 320.0
 texture = SubResource( 5 )
 expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -462.0
+margin_top = -242.0
+margin_right = 463.0
+margin_bottom = 225.0
+theme = SubResource( 14 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 15 )
+bbcode_enabled = true
+bbcode_text = "Forest
+- [url]https://sanctumpixel.itch.io/forest-lite-pixel-art-tileset[/url]
+
+Village
+- [url]https://anokolisa.itch.io/legacy-adventure-pack[/url]
+
+Free 3 Cyberpunk Sprites Pixel Art 
+- [url]https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art[/url]
+
+Portal 
+- [url]https://ruxar.itch.io/portal[/url]
+
+Modern City 
+- [url]https://free-game-assets.itch.io/free-city-backgrounds-pixel-art[/url]
+
+Red Cars 
+- [url]https://silverm.itch.io/pixel-realistic-cars[/url]
+
+Meteor 
+- [url]https://foozlecc.itch.io/void-environment-pack[/url]
+
+Trash&Chest 
+- [url]https://codemanu.itch.io/pixel-art-wasteland-asset-pack[/url]
+
+Animal 
+- [url]https://lyaseek.itch.io/miniffanimals[/url]
+
+Villager 
+- [url]https://free-game-assets.itch.io/villagers-sprite-sheets-free-pixel-art-pack[/url]
+
+Characters 
+- [url]https://free-game-assets.itch.io/free-3-character-sprite-pixel-art[/url]
+
+Sounds 
+- [url]https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack[/url]
+- [url]https://leohpaz.itch.io/rpg-essentials-sfx-free[/url]
+
+Music 
+- [url]https://tallbeard.itch.io/music-loop-bundle[/url]
+
+Icons
+- [url]https://www.flaticon.com/free-icon/mute_727240[/url]
+- [url]https://www.flaticon.com/free-icon/musical-note_461146[/url]"
+text = "Forest
+- https://sanctumpixel.itch.io/forest-lite-pixel-art-tileset
+
+Village
+- https://anokolisa.itch.io/legacy-adventure-pack
+
+Free 3 Cyberpunk Sprites Pixel Art 
+- https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art
+
+Portal 
+- https://ruxar.itch.io/portal
+
+Modern City 
+- https://free-game-assets.itch.io/free-city-backgrounds-pixel-art
+
+Red Cars 
+- https://silverm.itch.io/pixel-realistic-cars
+
+Meteor 
+- https://foozlecc.itch.io/void-environment-pack
+
+Trash&Chest 
+- https://codemanu.itch.io/pixel-art-wasteland-asset-pack
+
+Animal 
+- https://lyaseek.itch.io/miniffanimals
+
+Villager 
+- https://free-game-assets.itch.io/villagers-sprite-sheets-free-pixel-art-pack
+
+Characters 
+- https://free-game-assets.itch.io/free-3-character-sprite-pixel-art
+
+Sounds 
+- https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack
+- https://leohpaz.itch.io/rpg-essentials-sfx-free
+
+Music 
+- https://tallbeard.itch.io/music-loop-bundle
+
+Icons
+- https://www.flaticon.com/free-icon/mute_727240
+- https://www.flaticon.com/free-icon/musical-note_461146"
+
+[node name="Play_btn" type="TextureButton" parent="TextureRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -122.0
+margin_top = -114.0
+margin_right = 122.0
+margin_bottom = -24.0
+texture_normal = SubResource( 16 )
+texture_pressed = SubResource( 6 )
+texture_hover = SubResource( 7 )
+expand = true
+
+[node name="Label" type="Label" parent="TextureRect/Play_btn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -18.0
+margin_right = 120.0
+margin_bottom = 12.0
+custom_colors/font_color = Color( 0.380392, 0.368627, 0.423529, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "Play"
+align = 1
+
+[node name="ColorRect2" type="TextureRect" parent="TextureRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -83.5
+margin_top = -137.0
+margin_right = -56.5
+margin_bottom = -114.0
+rect_pivot_offset = Vector2( 10.5, 8 )
+texture = SubResource( 18 )
+expand = true
+
+[node name="ColorRect3" type="TextureRect" parent="TextureRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 57.5
+margin_top = -137.0
+margin_right = 84.5
+margin_bottom = -114.0
+rect_pivot_offset = Vector2( 10.5, 8 )
+texture = SubResource( 18 )
+expand = true
+
+[connection signal="meta_clicked" from="TextureRect/TextureRect/RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="pressed" from="TextureRect/Play_btn" to="." method="_on_Play_btn_pressed"]

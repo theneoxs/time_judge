@@ -30,6 +30,8 @@ region = Rect2( 739.008, 642.047, 90.084, 93.9812 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 28
+outline_size = 1
+outline_color = Color( 0.309804, 0.352941, 0.419608, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -37,27 +39,43 @@ size = 28
 extra_spacing_top = 15
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 0.882353, 0.890196, 0.921569, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.309804, 0.352941, 0.419608, 1 )
 
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.796078, 0.819608, 0.831373, 1 )
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.791914, 0.796813, 0.816406, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.309804, 0.352941, 0.419608, 1 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.629349, 0.63551, 0.660156, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.309804, 0.352941, 0.419608, 1 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=18]
 content_margin_left = 12.0
-bg_color = Color( 0.168627, 0.109804, 0.137255, 1 )
+bg_color = Color( 0.309804, 0.352941, 0.419608, 1 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=19]
 bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="Theme" id=13]
-VScrollBar/styles/grabber = SubResource( 8 )
-VScrollBar/styles/grabber_highlight = SubResource( 9 )
-VScrollBar/styles/grabber_pressed = SubResource( 10 )
-VScrollBar/styles/scroll = SubResource( 11 )
-VScrollBar/styles/scroll_focus = SubResource( 12 )
+VScrollBar/styles/grabber = SubResource( 15 )
+VScrollBar/styles/grabber_highlight = SubResource( 16 )
+VScrollBar/styles/grabber_pressed = SubResource( 17 )
+VScrollBar/styles/scroll = SubResource( 18 )
+VScrollBar/styles/scroll_focus = SubResource( 19 )
 
 [sub_resource type="DynamicFont" id=14]
 extra_spacing_top = 16
@@ -80,9 +98,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -177.0
-margin_top = 312.0
+margin_top = 332.0
 margin_right = 183.0
-margin_bottom = 401.0
+margin_bottom = 421.0
 texture_normal = SubResource( 1 )
 texture_pressed = SubResource( 2 )
 texture_hover = SubResource( 3 )
@@ -109,9 +127,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -733.0
-margin_top = -412.0
+margin_top = -362.0
 margin_right = -64.0
-margin_bottom = 257.0
+margin_bottom = 307.0
 texture = SubResource( 5 )
 expand = true
 
@@ -197,9 +215,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 58.0
-margin_top = -412.0
+margin_top = -362.0
 margin_right = 727.0
-margin_bottom = 257.0
+margin_bottom = 307.0
 texture = SubResource( 5 )
 expand = true
 

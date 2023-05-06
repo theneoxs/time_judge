@@ -13,7 +13,7 @@ region = Rect2( 739.008, 642.047, 90.084, 93.9812 )
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 4 )
 region = Rect2( 706.007, 1025.41, 92.2878, 30.7185 )
 
@@ -55,6 +55,9 @@ region = Rect2( 709.85, 960.766, 6.29712, 13.9119 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 894.0 ]
+}
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -78,9 +81,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -539.0
-margin_top = -310.0
+margin_top = -317.0
 margin_right = 539.0
-margin_bottom = 310.0
+margin_bottom = 303.0
 texture = SubResource( 5 )
 expand = true
 
@@ -249,12 +252,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -354.0
+margin_left = -157.5
 margin_top = 13.0
-margin_right = -39.0
+margin_right = 157.5
 margin_bottom = 103.0
 rect_pivot_offset = Vector2( 101, 24 )
-texture_normal = SubResource( 12 )
+texture_normal = SubResource( 16 )
 texture_pressed = SubResource( 6 )
 texture_hover = SubResource( 7 )
 expand = true
@@ -277,9 +280,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 38.0
+margin_left = 220.0
 margin_top = 13.0
-margin_right = 353.0
+margin_right = 440.0
 margin_bottom = 103.0
 rect_pivot_offset = Vector2( 101, 24 )
 texture_normal = SubResource( 9 )
@@ -314,47 +317,25 @@ text = "Complete all tasks"
 align = 1
 valign = 1
 
-[node name="Sound" type="TextureButton" parent="ColorRect/ColorRect2/ColorRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -66.0
-margin_top = 173.0
-margin_right = -26.0
-margin_bottom = 213.0
-texture_normal = ExtResource( 5 )
-expand = true
-
-[node name="Music" type="TextureButton" parent="ColorRect/ColorRect2/ColorRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 4.0
-margin_top = 173.0
-margin_right = 45.0
-margin_bottom = 214.0
-texture_normal = ExtResource( 1 )
-expand = true
-
 [node name="TextureRect" type="TextureRect" parent="ColorRect/ColorRect2"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -210.0
-margin_top = 18.0
-margin_right = 211.0
-margin_bottom = 142.0
+margin_left = -159.0
+margin_top = 37.0
+margin_right = 159.0
+margin_bottom = 137.0
 texture = SubResource( 4 )
 expand = true
 
 [node name="Label" type="Label" parent="ColorRect/ColorRect2/TextureRect"]
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 margin_left = -100.0
-margin_top = 36.0
+margin_top = -23.0
 margin_right = 100.0
-margin_bottom = 66.0
+margin_bottom = 7.0
 custom_colors/font_color = Color( 0.380392, 0.368627, 0.423529, 1 )
 custom_fonts/font = SubResource( 8 )
 text = "Pause"
@@ -362,21 +343,21 @@ text = "Pause"
 [node name="ColorRect2" type="TextureRect" parent="ColorRect/ColorRect2"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 117.0
-margin_top = -147.0
-margin_right = 144.0
-margin_bottom = -124.0
-rect_pivot_offset = Vector2( -143, -114 )
+margin_left = 342.0
+margin_top = -154.0
+margin_right = 369.0
+margin_bottom = -131.0
+rect_pivot_offset = Vector2( 14, 12 )
 texture = SubResource( 11 )
 expand = true
 
 [node name="ColorRect3" type="TextureRect" parent="ColorRect/ColorRect2"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 326.0
-margin_top = -146.0
-margin_right = 353.0
-margin_bottom = -123.0
+margin_left = 500.0
+margin_top = -153.0
+margin_right = 527.0
+margin_bottom = -130.0
 rect_pivot_offset = Vector2( 14, 9 )
 texture = SubResource( 11 )
 expand = true
@@ -384,10 +365,10 @@ expand = true
 [node name="ColorRect4" type="TextureRect" parent="ColorRect/ColorRect2"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 512.0
-margin_top = -146.0
-margin_right = 539.0
-margin_bottom = -123.0
+margin_left = 698.0
+margin_top = -153.0
+margin_right = 725.0
+margin_bottom = -130.0
 rect_pivot_offset = Vector2( 14, 9 )
 texture = SubResource( 11 )
 expand = true
@@ -395,11 +376,69 @@ expand = true
 [node name="ColorRect5" type="TextureRect" parent="ColorRect/ColorRect2"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 713.0
-margin_top = -146.0
-margin_right = 740.0
-margin_bottom = -123.0
+margin_left = 800.0
+margin_top = -153.0
+margin_right = 827.0
+margin_bottom = -130.0
 rect_pivot_offset = Vector2( 14, 9 )
+texture = SubResource( 11 )
+expand = true
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect/ColorRect2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -442.0
+margin_top = -132.0
+margin_right = -222.0
+margin_bottom = -42.0
+texture = SubResource( 16 )
+expand = true
+
+[node name="Sound" type="TextureButton" parent="ColorRect/ColorRect2/TextureRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -61.0
+margin_top = -22.0
+margin_right = -21.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 5 )
+expand = true
+
+[node name="Music" type="TextureButton" parent="ColorRect/ColorRect2/TextureRect2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 21.0
+margin_top = -23.0
+margin_right = 62.0
+margin_bottom = 18.0
+texture_normal = ExtResource( 1 )
+expand = true
+
+[node name="ColorRect6" type="TextureRect" parent="ColorRect/ColorRect2"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 35.0
+margin_top = -154.0
+margin_right = 62.0
+margin_bottom = -131.0
+rect_pivot_offset = Vector2( 14, 12 )
+texture = SubResource( 11 )
+expand = true
+
+[node name="ColorRect7" type="TextureRect" parent="ColorRect/ColorRect2"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 133.0
+margin_top = -154.0
+margin_right = 160.0
+margin_bottom = -131.0
+rect_pivot_offset = Vector2( 14, 12 )
 texture = SubResource( 11 )
 expand = true
 
@@ -407,5 +446,5 @@ expand = true
 [connection signal="pressed" from="ColorRect/ColorRect2/ColorRect/Return" to="." method="_on_Return_pressed"]
 [connection signal="mouse_entered" from="ColorRect/ColorRect2/ColorRect/Exit" to="." method="_on_Btn_mouse_entered"]
 [connection signal="pressed" from="ColorRect/ColorRect2/ColorRect/Exit" to="." method="_on_Exit_pressed"]
-[connection signal="pressed" from="ColorRect/ColorRect2/ColorRect/Sound" to="." method="_on_Sound_pressed"]
-[connection signal="pressed" from="ColorRect/ColorRect2/ColorRect/Music" to="." method="_on_Music_pressed"]
+[connection signal="pressed" from="ColorRect/ColorRect2/TextureRect2/Sound" to="." method="_on_Sound_pressed"]
+[connection signal="pressed" from="ColorRect/ColorRect2/TextureRect2/Music" to="." method="_on_Music_pressed"]

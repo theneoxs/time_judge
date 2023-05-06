@@ -35,6 +35,7 @@ func _on_Start_btn_pressed():
 	Global.silence_main_menu_sound()
 	$Timer.start()
 	is_start = true
+	
 
 
 func _on_Author_btn_pressed():
@@ -43,7 +44,7 @@ func _on_Author_btn_pressed():
 
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://Scene/Game.tscn")
+	get_tree().change_scene("res://GUI/Rules.tscn")
 
 
 func _on_Btn_mouse_entered():
