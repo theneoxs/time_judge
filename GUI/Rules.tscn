@@ -145,10 +145,10 @@ custom_fonts/normal_font = SubResource( 15 )
 bbcode_enabled = true
 bbcode_text = "You are a timeless trainee judge following the life of one place in four different times. Based on the results of this work, you may be promoted ... or fired.
 Your task is to save all 4 timelines. To do this, you need to follow simple steps:
-- [u]Chase away[/u] the bears
-- [u]Help the fallen[/u] villagers complete the village
-- [u]Clear[/u] the street of trash
-- [u]Close normal portals[/u] and repair shorted cyborgs
+- [u]Chase away[/u] the bears (click)
+- [u]Help the fallen[/u] villagers complete the village (drag'n'drop)
+- [u]Clear[/u] the street of trash (drag'n'drop)
+- [u]Close normal portals[/u] and repair shorted cyborgs (click)
 Listen carefully to the sounds, they will help you react in time.
 
 At certain moments, non-standard actions will occur in each of the lines. What to do with them is up to you, but all four lines will be saved only when all the tasks in the tasklist are completed (green).
@@ -157,10 +157,10 @@ Timelines have their own points of no return, coming after a certain time. If th
 You have 5 minutes to save the lines."
 text = "You are a timeless trainee judge following the life of one place in four different times. Based on the results of this work, you may be promoted ... or fired.
 Your task is to save all 4 timelines. To do this, you need to follow simple steps:
-- Chase away the bears
-- Help the fallen villagers complete the village
-- Clear the street of trash
-- Close normal portals and repair shorted cyborgs
+- Chase away the bears (click)
+- Help the fallen villagers complete the village (drag'n'drop)
+- Clear the street of trash (drag'n'drop)
+- Close normal portals and repair shorted cyborgs (click)
 Listen carefully to the sounds, they will help you react in time.
 
 At certain moments, non-standard actions will occur in each of the lines. What to do with them is up to you, but all four lines will be saved only when all the tasks in the tasklist are completed (green).

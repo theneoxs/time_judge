@@ -34,4 +34,6 @@ func reverse():
 	is_move = true
 	move_and_collide(move_vector)
 	is_stopped = false
+	anim_dots.travel("walk")
+	flip_anim()
 
