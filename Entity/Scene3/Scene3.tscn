@@ -1,9 +1,9 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Data/Texture/crystall_ball.png" type="Texture" id=1]
 [ext_resource path="res://Entity/Scene3/Scene3.gd" type="Script" id=2]
-[ext_resource path="res://Data/Sprites/MiniBear.png" type="Texture" id=3]
-[ext_resource path="res://Data/Sprites/tileset.png" type="Texture" id=4]
+[ext_resource path="res://Entity/Scene2/Tiles.png" type="Texture" id=3]
+[ext_resource path="res://Entity/Scene3/City/1.png" type="Texture" id=4]
 [ext_resource path="res://Entity/Scene3/Header.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Data/Sprites/Cars2.png" type="Texture" id=6]
 [ext_resource path="res://Entity/Scene3/Car.gd" type="Script" id=7]
@@ -11,18 +11,35 @@
 [ext_resource path="res://Data/Texture/Asteroid 01 - Base.png" type="Texture" id=9]
 [ext_resource path="res://Data/Sprites/piano.png" type="Texture" id=10]
 [ext_resource path="res://Button_font.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Data/Audio/55_Encounter_02.wav" type="AudioStream" id=12]
+[ext_resource path="res://Entity/Scene3/City/5.png" type="Texture" id=13]
+[ext_resource path="res://Entity/Scene3/City/2.png" type="Texture" id=14]
+[ext_resource path="res://Entity/Scene3/City/3.png" type="Texture" id=15]
+[ext_resource path="res://Entity/Scene3/City/4.png" type="Texture" id=16]
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 16 )
+region = Rect2( 71.8025, 63.0232, 384.569, 208.147 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 13 )
+region = Rect2( 0.523346, 258.964, 572.514, 117.604 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 362, 36.5 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 9, 38 )
+extents = Vector2( 9, 170.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 67, 8.25 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 18, 24.8125 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 175.11, 10.5138, 17.8505, 21.347 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 76, 15.1877 )
@@ -42,6 +59,31 @@ script = ExtResource( 2 )
 scale = Vector2( 0.397045, 0.359259 )
 texture = ExtResource( 1 )
 
+[node name="1" type="Sprite" parent="."]
+position = Vector2( 1, 23 )
+scale = Vector2( 1.33333, 1.33333 )
+texture = ExtResource( 4 )
+
+[node name="2" type="Sprite" parent="."]
+position = Vector2( 2, 24 )
+scale = Vector2( 1.33333, 1.33333 )
+texture = ExtResource( 14 )
+
+[node name="3" type="Sprite" parent="."]
+position = Vector2( 1, 24 )
+scale = Vector2( 1.33333, 1.33333 )
+texture = ExtResource( 15 )
+
+[node name="4" type="Sprite" parent="."]
+position = Vector2( 4.76837e-07, 38.9521 )
+scale = Vector2( 1.99908, 1.88415 )
+texture = SubResource( 8 )
+
+[node name="5" type="Sprite" parent="."]
+position = Vector2( 0.5, 192 )
+scale = Vector2( 1.34441, 1 )
+texture = SubResource( 9 )
+
 [node name="Bottom" type="StaticBody2D" parent="."]
 position = Vector2( -0.000640869, 3.05176e-05 )
 collision_layer = 8
@@ -51,34 +93,27 @@ collision_mask = 16
 position = Vector2( 0, 172.5 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="Bottom"]
-position = Vector2( 2.00064, 128 )
-scale = Vector2( 34.9453, 1.90625 )
-texture = ExtResource( 3 )
-hframes = 10
-vframes = 8
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bottom"]
-position = Vector2( -364.999, 118 )
+position = Vector2( -364.999, -14.5 )
 shape = SubResource( 7 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Bottom"]
-position = Vector2( 363.001, 119 )
+position = Vector2( 363.001, -23 )
 shape = SubResource( 7 )
 
 [node name="TrashPos" type="Node2D" parent="."]
 
 [node name="Pos1" type="Position2D" parent="TrashPos"]
-position = Vector2( -303, 15 )
+position = Vector2( -137, 16 )
 
 [node name="Pos2" type="Position2D" parent="TrashPos"]
-position = Vector2( -149, -13 )
+position = Vector2( -88, 68 )
 
 [node name="Pos3" type="Position2D" parent="TrashPos"]
-position = Vector2( 137, -45 )
+position = Vector2( 132, -74 )
 
 [node name="Pos4" type="Position2D" parent="TrashPos"]
-position = Vector2( 258, 20 )
+position = Vector2( 221, -34 )
 
 [node name="Top" type="StaticBody2D" parent="."]
 position = Vector2( 17, 11 )
@@ -86,15 +121,8 @@ collision_layer = 8
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
-position = Vector2( -125.999, -61 )
+position = Vector2( -125.999, -47 )
 shape = SubResource( 2 )
-
-[node name="Sprite" type="Sprite" parent="Top"]
-position = Vector2( -125.999, -76 )
-scale = Vector2( 6.6416, 1.16797 )
-texture = ExtResource( 3 )
-hframes = 10
-vframes = 8
 
 [node name="Trash_spawn_timer" type="Timer" parent="."]
 wait_time = 3.0
@@ -110,22 +138,21 @@ position = Vector2( 307, -86.1875 )
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Trash_can"]
-position = Vector2( 307, -84 )
-scale = Vector2( 4.0166, 5.75 )
-texture = ExtResource( 4 )
-hframes = 18
-vframes = 20
-frame = 82
+position = Vector2( 306, -86.9063 )
+scale = Vector2( 2.23529, 2.38988 )
+texture = SubResource( 10 )
 
 [node name="Header" parent="." instance=ExtResource( 5 )]
-position = Vector2( -91, -87 )
+position = Vector2( -91, -74 )
 
 [node name="Royal" type="RigidBody2D" parent="."]
-position = Vector2( -47, -88 )
+position = Vector2( -47, -75 )
 collision_layer = 32
 collision_mask = 40
 input_pickable = true
 mode = 2
+mass = 50.0
+gravity_scale = 3.0
 contacts_reported = 7
 contact_monitor = true
 script = ExtResource( 8 )
@@ -165,6 +192,10 @@ color = Color( 1, 0, 0, 1 )
 
 [node name="Alarm_timer" type="Timer" parent="Car"]
 wait_time = 0.5
+
+[node name="Car_crash" type="AudioStreamPlayer" parent="Car"]
+stream = ExtResource( 12 )
+bus = "Effects"
 
 [node name="Meteor_timer" type="Timer" parent="."]
 wait_time = 5.0

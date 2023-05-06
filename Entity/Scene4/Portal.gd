@@ -5,6 +5,7 @@ onready var clear_timer = $Clear_timer
 var clear_portal = false
 
 func _ready():
+	$Create.play()
 	scale = Vector2(0.5, 0.5)
 
 func _physics_process(delta):

@@ -5,6 +5,7 @@ var selected = false
 func _ready():
 	seed(Time.get_unix_time_from_system())
 	linear_velocity.x = rand_range(70, 150)
+	$Create.play()
 
 func _physics_process(delta):
 	if selected:
@@ -26,5 +27,6 @@ func _on_Trash_input_event(viewport, event, shape_idx):
 
 func _on_Trash_body_entered(body):
 	if body.name == "Trash_can":
+		Global.play_trash()
 		Global.count_trash -= 1
 		queue_free()

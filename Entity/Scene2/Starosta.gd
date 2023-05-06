@@ -5,6 +5,8 @@ onready var anim_dots = sprites.get("parameters/playback")
 onready var jump_timer = $Jump_timer
 onready var down_timer = $Down_timer
 onready var answer_timer = $Answer_timer
+onready var down_sound = $Down
+onready var jump_sound = $Jump
 
 var selected = false
 var is_can_up = false
@@ -46,6 +48,7 @@ func _on_Starosta_body_entered(body):
 		linear_velocity.y = 0
 		is_can_up = true
 		anim_dots.travel("idle")
+		down_sound.play()
 		if is_once_down == false:
 			jump_timer.start()
 			is_once_down = true
@@ -65,6 +68,7 @@ func _on_Jump_timer_timeout():
 	anim_dots.travel("idle")
 	linear_velocity = Vector2(80, -400)
 	Global.starosta_selfback = true
+	jump_sound.play()
 	
 
 func down_to_gentle():

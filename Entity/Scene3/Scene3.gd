@@ -54,6 +54,7 @@ func _on_Trash_spawn_timer_timeout():
 
 
 func _on_Car_car_crash():
+	$Car/Car_crash.play()
 	if car_owner_now == null:
 		car_owner_now = car_owner.instance()
 		add_child(car_owner_now)

@@ -1,5 +1,20 @@
 extends Control
 
+onready var sound_btn = $ColorRect/ColorRect2/ColorRect/Sound
+onready var music_btn = $ColorRect/ColorRect2/ColorRect/Music
+
+func _ready():
+	set_icon_status()
+
+func set_icon_status():
+	if AudioServer.is_bus_mute(AudioServer.get_bus_index("Effects")):
+		sound_btn.modulate.a = 0.3
+	else:
+		sound_btn.modulate.a = 1
+	if AudioServer.is_bus_mute(AudioServer.get_bus_index("Music")):
+		music_btn.modulate.a = 0.3
+	else:
+		music_btn.modulate.a = 1
 
 func _process(delta):
 	if Global.bear_is_leave:
@@ -49,12 +64,26 @@ func _process(delta):
 
 
 func _on_Exit_pressed():
+	Global.play_click()
 	get_tree().change_scene("res://GUI/Main_menu.tscn")
 
 
 func _on_Return_pressed():
+	Global.play_from_pause()
 	queue_free()
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		_on_Return_pressed()
+
+func _on_Btn_mouse_entered():
+	Global.play_focus()
+
+
+func _on_Sound_pressed():
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Effects"), !AudioServer.is_bus_mute(AudioServer.get_bus_index("Effects")))
+	set_icon_status()
+
+func _on_Music_pressed():
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), !AudioServer.is_bus_mute(AudioServer.get_bus_index("Music"))) # Replace with function body.
+	set_icon_status()

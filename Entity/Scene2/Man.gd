@@ -5,6 +5,8 @@ onready var anim_dots = sprites.get("parameters/playback")
 onready var down_timer = $Down_timer
 onready var wait_timer = $Wait_timer
 
+onready var down_sound = $Down
+
 var selected = false
 var is_can_up = false
 var is_leave = false
@@ -49,6 +51,7 @@ func _on_Man_body_entered(body):
 			anim_dots.travel("death")
 			down_timer.stop()
 			wait_timer.start()
+			down_sound.play()
 	if body.name == "House":
 		linear_velocity.y = 0
 		is_can_up = false

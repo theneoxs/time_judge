@@ -1,10 +1,11 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Entity/Scene2/Man.gd" type="Script" id=1]
 [ext_resource path="res://Data/Sprites/Boy_idle.png" type="Texture" id=2]
 [ext_resource path="res://Data/Sprites/Boy_walk.png" type="Texture" id=3]
 [ext_resource path="res://Data/Sprites/Boy_death.png" type="Texture" id=4]
 [ext_resource path="res://Data/Sprites/Boy_attack.png" type="Texture" id=5]
+[ext_resource path="res://Data/Audio/61_Hit_03.wav" type="AudioStream" id=6]
 
 [sub_resource type="AtlasTexture" id=97]
 atlas = ExtResource( 5 )
@@ -443,6 +444,10 @@ wait_time = 5.0
 [node name="Wait_timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="Down" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "Effects"
 
 [connection signal="body_entered" from="." to="." method="_on_Man_body_entered"]
 [connection signal="input_event" from="." to="." method="_on_Man_input_event"]

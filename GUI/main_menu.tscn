@@ -1,9 +1,15 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://GUI/Main_menu.gd" type="Script" id=1]
 [ext_resource path="res://GUI/fon.png" type="Texture" id=2]
 [ext_resource path="res://GUI/Wooden Pixel Art GUI 32x32.png" type="Texture" id=3]
 [ext_resource path="res://Data/dogica.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://GUI/mute.png" type="Texture" id=5]
+[ext_resource path="res://GUI/musical-note.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=11]
+size = 69
+font_data = ExtResource( 4 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
@@ -46,15 +52,30 @@ anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
 
+[node name="Label" type="Label" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -519.0
+margin_top = -330.0
+margin_right = 519.0
+margin_bottom = -277.0
+custom_colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "Time Judge"
+align = 1
+valign = 1
+
 [node name="Exit_btn" type="TextureButton" parent="Background"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -247.0
-margin_top = 119.0
+margin_top = 191.0
 margin_right = 247.0
-margin_bottom = 223.0
+margin_bottom = 295.0
 texture_normal = SubResource( 9 )
 texture_pressed = SubResource( 2 )
 texture_hover = SubResource( 10 )
@@ -79,9 +100,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -247.0
-margin_top = -222.0
+margin_top = -150.0
 margin_right = 247.0
-margin_bottom = -118.0
+margin_bottom = -46.0
 texture_normal = SubResource( 5 )
 texture_pressed = SubResource( 6 )
 texture_hover = SubResource( 7 )
@@ -106,9 +127,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -247.0
-margin_top = -52.0
+margin_top = 20.0
 margin_right = 247.0
-margin_bottom = 52.0
+margin_bottom = 124.0
 texture_normal = SubResource( 5 )
 texture_pressed = SubResource( 6 )
 texture_hover = SubResource( 7 )
@@ -127,6 +148,30 @@ custom_colors/font_color = Color( 0.380392, 0.368627, 0.423529, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "Authors"
 
+[node name="Sound" type="TextureButton" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 667.0
+margin_top = -433.0
+margin_right = 707.0
+margin_bottom = -393.0
+texture_normal = ExtResource( 5 )
+expand = true
+
+[node name="Music" type="TextureButton" parent="Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 737.0
+margin_top = -431.0
+margin_right = 778.0
+margin_bottom = -390.0
+texture_normal = ExtResource( 6 )
+expand = true
+
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -135,7 +180,12 @@ color = Color( 0.560784, 0.407843, 0.329412, 1 )
 
 [node name="Timer" type="Timer" parent="."]
 
+[connection signal="mouse_entered" from="Background/Exit_btn" to="." method="_on_Btn_mouse_entered"]
 [connection signal="pressed" from="Background/Exit_btn" to="." method="_on_Exit_btn_pressed"]
+[connection signal="mouse_entered" from="Background/Start_btn" to="." method="_on_Btn_mouse_entered"]
 [connection signal="pressed" from="Background/Start_btn" to="." method="_on_Start_btn_pressed"]
+[connection signal="mouse_entered" from="Background/Author_btn" to="." method="_on_Btn_mouse_entered"]
 [connection signal="pressed" from="Background/Author_btn" to="." method="_on_Author_btn_pressed"]
+[connection signal="pressed" from="Background/Sound" to="." method="_on_Sound_pressed"]
+[connection signal="pressed" from="Background/Music" to="." method="_on_Music_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

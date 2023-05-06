@@ -6,6 +6,7 @@ onready var logo = $ColorRect/TextureRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Timer.start()
 	black_screen.modulate.a = 1
 	
 
@@ -22,4 +23,4 @@ func _process(delta):
 
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://GUI/main_menu.tscn")
+	get_tree().change_scene("res://GUI/Main_menu.tscn")

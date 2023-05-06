@@ -1,7 +1,9 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Data/Sprites/MiniBear.png" type="Texture" id=1]
 [ext_resource path="res://Entity/Scene1/Bear.gd" type="Script" id=2]
+[ext_resource path="res://Data/Audio/Bubble heavy 1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Data/Audio/Boss hit 1.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -205,6 +207,22 @@ autostart = true
 wait_time = 5.0
 one_shot = true
 
+[node name="Walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Effects"
+
+[node name="Walk_sount_timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Attack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Effects"
+
+[node name="Attack_timer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="input_event" from="." to="." method="_on_Bear_input_event"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Dead_timer" to="." method="_on_Dead_timer_timeout"]
+[connection signal="timeout" from="Walk_sount_timer" to="." method="_on_Walk_sount_timer_timeout"]
+[connection signal="timeout" from="Attack_timer" to="." method="_on_Attack_timer_timeout"]

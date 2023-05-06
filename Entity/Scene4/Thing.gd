@@ -3,9 +3,13 @@ extends RigidBody2D
 onready var clear_timer = $Clear_timer
 var selected = false
 
+var movement = 0
+
 func _physics_process(delta):
 	if selected:
 		modulate.a = lerp(modulate.a, 0, 0.5*delta)
+	if get_parent().get_node("Thing").position.x <= 400:
+		queue_free()
 
 func check_pass():
 	selected = true

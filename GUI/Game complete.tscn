@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Data/dogica.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://GUI/Game complete.gd" type="Script" id=2]
+[ext_resource path="res://Data/Audio/Music/Patreon Goal Reward Loops - Track 01.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 33
@@ -53,3 +54,8 @@ valign = 1
 [node name="WhiteScreen" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+bus = "Music"
