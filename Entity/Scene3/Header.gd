@@ -21,7 +21,7 @@ func _physics_process(delta):
 
 func _on_Down_timer_timeout():
 	if Global.count_trash <= 8:
-		linear_velocity.x = 175
+		linear_velocity.x = 300
 	else:
 		linear_velocity.x = -250
 		linear_velocity.y = -200

@@ -12,7 +12,7 @@ func _physics_process(delta):
 	if movable:
 		global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 		linear_velocity.y = 0
-	if get_parent().get_node("Thing").position.x <= -400:
+	if get_parent().get_node("Thing").position.x <= -350:
 		queue_free()
 
 func _input(event):

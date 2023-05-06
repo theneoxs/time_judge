@@ -46,8 +46,6 @@ func _on_Cyborg_spawn_timer_timeout():
 func _on_Place_cyborg_body_entered(body):
 	cyborg_spawn_timer.stop()
 	body.stand_ready()
-	place_cyborg.monitorable = false
-	place_cyborg.monitoring = false
 	$Stop_timer.start()
 
 

@@ -3,19 +3,22 @@ extends Node
 var is_start_game = false
 
 var TOTAL_TIME = 300
-var WAIT_WOODCUTTER = 100
+var WAIT_WOODCUTTER = 140
 var CHECK_1_BEAR = 200
 var CHECK_2_GENTS = 250
 var DOWN_STAROSTA = 120
 var GENTLEMAN_INCOMING = 180
-var COUNT_BEAR = 6
+var COUNT_BEAR = 7
 var DOWN_METEOR = 270
 var DOWN_PIANO = 180
-var TIME_CREATE_TRASH = 2.5
-var COUNT_PORTAL = 10
-var TIME_CREATE_PORTAL = 7
-var TIME_CREATE_CYBORG = 15
+var TIME_CREATE_TRASH = 3
+var COUNT_PORTAL = 20
+var TIME_CREATE_PORTAL = 6
+var TIME_CREATE_CYBORG = 8
 var WAIT_PORTAL_3 = 10
+var MAX_TRASH = 6
+var RUSH_MAN_MIN_TIMER = 4
+var RUSH_MAN_MAX_TIMER = 10
 
 var bear_is_dead = false
 var count_leave_bear = 0
@@ -26,7 +29,7 @@ var starosta_selfback = false
 var gentleman_leave = false
 
 var count_trash = 0
-var car_crashed = false #Использовать к порталу, пока не используемое
+var car_crashed = false
 var item_is_picked = false
 
 var closing_portal = 0
@@ -43,6 +46,7 @@ var is_start_game_sound = false
 
 onready var main_menu_sound = $Main_menu_sound
 onready var game_sound = $Game_sound
+var is_game_stopped = false
 
 func _process(delta):
 	if is_silent_main_menu_sound:
@@ -79,13 +83,16 @@ func stop_main_menu_sound():
 	main_menu_sound.stop()
 
 func play_Game_sound():
+	is_game_stopped = false
 	game_sound.play()
 
 func stop_Game_sound():
+	is_game_stopped = true
 	game_sound.stop()
 
 func _on_Game_sound_finished():
-	game_sound.play()
+	if !is_game_stopped:
+		game_sound.play()
 
 func silence_main_menu_sound():
 	is_silent_main_menu_sound = true

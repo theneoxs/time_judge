@@ -1,7 +1,12 @@
 extends Control
 
+<<<<<<< Updated upstream
 onready var sound_btn = $ColorRect/ColorRect2/TextureRect2/Sound
 onready var music_btn = $ColorRect/ColorRect2/TextureRect2/Music
+=======
+onready var sound_btn = $ColorRect/ColorRect2/ColorRect/Control/Sound
+onready var music_btn = $ColorRect/ColorRect2/ColorRect/Control/Music
+>>>>>>> Stashed changes
 
 func _ready():
 	set_icon_status()
@@ -39,12 +44,12 @@ func _process(delta):
 		$ColorRect/ColorRect2/ColorRect/Checklist/VBoxContainer/List5.modulate = Color(0.87, 0, 0, 1)
 	else:
 		$ColorRect/ColorRect2/ColorRect/Checklist/VBoxContainer/List5.modulate = Color(0.06, 0.6, 0, 1)
-	if Global.count_trash >= 12:
+	if Global.count_trash >= Global.MAX_TRASH:
 		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List1.modulate = Color(0.87, 0, 0, 1)
-		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List1.text = "Count less than 12 trash (" + str(Global.count_trash) + ")"
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List1.text = "Less than "+str(Global.MAX_TRASH)+" trash (" + str(Global.count_trash) + ")"
 	else:
 		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List1.modulate = Color(0.06, 0.6, 0, 1)
-		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List1.text = "Count less than 12 trash (" + str(Global.count_trash) + ")"
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List1.text = "Less than "+str(Global.MAX_TRASH)+" trash (" + str(Global.count_trash) + ")"
 	if Global.car_crashed:
 		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List2.modulate = Color(0.06, 0.6, 0, 1)
 	else:
@@ -53,7 +58,7 @@ func _process(delta):
 		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List3.modulate = Color(0.06, 0.6, 0, 1)
 	else:
 		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List3.modulate = Color(0.87, 0, 0, 1)
-	if Global.closing_portal >= 10:
+	if Global.closing_portal >= Global.COUNT_PORTAL:
 		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List4.modulate = Color(0.06, 0.6, 0, 1)
 		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List4.text = "Close "+str(Global.COUNT_PORTAL)+" portal (" + str(Global.closing_portal) + ")"
 	else:

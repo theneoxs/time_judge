@@ -62,16 +62,16 @@ texture = ExtResource( 10 )
 [node name="Spawnpoints" type="Node2D" parent="."]
 
 [node name="Pos1" type="Position2D" parent="Spawnpoints"]
-position = Vector2( -470, 89 )
+position = Vector2( -442, 89 )
 
 [node name="Pos2" type="Position2D" parent="Spawnpoints"]
-position = Vector2( -499, 146 )
+position = Vector2( -443, 146 )
 
 [node name="Pos3" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 460, 84 )
+position = Vector2( 448, 84 )
 
 [node name="Pos4" type="Position2D" parent="Spawnpoints"]
-position = Vector2( 497, 123 )
+position = Vector2( 447, 123 )
 
 [node name="Bear_spawn_timer" type="Timer" parent="."]
 wait_time = 5.0

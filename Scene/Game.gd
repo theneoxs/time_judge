@@ -82,7 +82,8 @@ func _process(delta):
 	timer_check_2.value = time_check_2_now
 	time_check_3_now -= delta
 	timer_check_3.value = time_check_3_now
-	timer_label.text = ("%d:%02d" % [int(time_now)/60, int(time_now)%60])
+	if time_now > 0:
+		timer_label.text = ("%d:%02d" % [int(time_now)/60, int(time_now)%60])
 	if start1:
 		noise1.modulate.a = lerp(noise1.modulate.a, 1, delta)
 	if start2:

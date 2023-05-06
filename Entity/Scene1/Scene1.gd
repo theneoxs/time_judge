@@ -24,7 +24,7 @@ func _physics_process(delta):
 			bear_now = null
 			bear_timer.start()
 	if woodman_now != null:
-		if woodman_now.position.x <= -400 and woodman_now.is_back == true:
+		if woodman_now.position.x <= -450 or woodman_now.position.x >= 450:
 			woodman_now.queue_free()
 			woodman_now = null
 			if Global.bear_is_dead:

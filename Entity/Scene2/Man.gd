@@ -14,7 +14,7 @@ var is_leave = false
 func _ready():
 	anim_dots.travel("attack1")
 	seed(Time.get_unix_time_from_system())
-	down_timer.wait_time = rand_range(5, 15)
+	down_timer.wait_time = rand_range(Global.RUSH_MAN_MIN_TIMER, Global.RUSH_MAN_MAX_TIMER)
 	down_timer.start()
 
 
@@ -25,6 +25,7 @@ func _physics_process(delta):
 		linear_velocity.y = 0
 	if is_leave:
 		global_position = global_position.linear_interpolate(Vector2(1800, 325), 0.5*delta)
+	
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -56,7 +57,7 @@ func _on_Man_body_entered(body):
 		linear_velocity.y = 0
 		is_can_up = false
 		anim_dots.travel("attack1")
-		down_timer.wait_time = rand_range(5, 15)
+		down_timer.wait_time = rand_range(Global.RUSH_MAN_MIN_TIMER, Global.RUSH_MAN_MAX_TIMER)
 		down_timer.start()
 
 

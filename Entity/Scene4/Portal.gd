@@ -29,6 +29,12 @@ func make_current():
 	current_portal = true
 	modulate = Color(0.7, 0.8, 1)
 
+func make_exit_portal():
+	current_portal = true
+	collision_layer = 0
+	collision_mask = 0
+	modulate = Color(0.7, 0.8, 1)
+	clear_timer.start()
 
 func _on_Portal_body_entered(body):
 	if body.name == "Thing" and current_portal:
@@ -36,6 +42,8 @@ func _on_Portal_body_entered(body):
 		clear_portal = true
 		Global.item_sending = true
 		body.check_pass()
+		get_parent().place_cyborg.set_deferred("monitorable", false)
+		get_parent().place_cyborg.set_deferred("monitoring", false)
 
 
 func _on_Clear_timer_timeout():

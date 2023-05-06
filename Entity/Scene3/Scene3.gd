@@ -75,11 +75,12 @@ func _on_Wait_portal_timer_timeout():
 	$Wait_thing_timer.start()
 	var new_portal = portal.instance()
 	add_child(new_portal)
+	new_portal.make_exit_portal()
 	new_portal.position = $TrashPos/Pos3.position
 
 
 func _on_Wait_thing_timer_timeout():
-	if Global.count_trash <= 12 and has_node("Portal"):
+	if Global.count_trash <= Global.MAX_TRASH and has_node("Portal"):
 		var new_thing = thing.instance()
 		add_child(new_thing)
 		new_thing.position = $TrashPos/Pos3.position

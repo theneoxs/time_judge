@@ -36,7 +36,7 @@ func _physics_process(delta):
 			man4 = null
 			Global.count_villager -= 1
 	if gentleman_now != null:
-		if gentleman_now.position.x >= 405 or gentleman_now.position.x <= -405:
+		if gentleman_now.position.x >= 405 or gentleman_now.position.x <= -405 or gentleman_now.position.y >= 220 or gentleman_now.position.y <= -220:
 			gentleman_now.queue_free()
 			gentleman_now = null
 	 
