@@ -55,9 +55,9 @@ func _process(delta):
 		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List3.modulate = Color(0.87, 0, 0, 1)
 	if Global.closing_portal >= 10:
 		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List4.modulate = Color(0.06, 0.6, 0, 1)
-		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List4.text = "Close "+str(Global.closing_portal)+" portal (" + str(Global.closing_portal) + ")"
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List4.text = "Close "+str(Global.COUNT_PORTAL)+" portal (" + str(Global.closing_portal) + ")"
 	else:
-		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List4.text = "Close "+str(Global.closing_portal)+" portal (" + str(Global.closing_portal) + ")"
+		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List4.text = "Close "+str(Global.COUNT_PORTAL)+" portal (" + str(Global.closing_portal) + ")"
 	if Global.item_sending:
 		$ColorRect/ColorRect2/ColorRect/Checklist2/VBoxContainer/List5.modulate = Color(0.06, 0.6, 0, 1)
 	
