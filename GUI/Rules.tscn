@@ -143,8 +143,10 @@ theme = SubResource( 14 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 15 )
 bbcode_enabled = true
-bbcode_text = "You are a timeless trainee judge following the life of one place in four different times. Based on the results of this work, you may be promoted ... or fired.
-Your task is to save all 4 timelines. To do this, you need to follow simple steps:
+bbcode_text = "You are a timeless trainee judge following the life of one place in four different times. Based on the results of this work, you may be promoted or fired.
+Your task is to save all 4 timelines. All tasks write on tasklist [u](press to ESC)[/u].
+
+To do this, you need to follow simple steps:
 - [u]Chase away[/u] the bears (click)
 - [u]Help the fallen[/u] villagers complete the village (drag'n'drop)
 - [u]Clear[/u] the street of trash (drag'n'drop)
@@ -155,8 +157,10 @@ At certain moments, non-standard actions will occur in each of the lines. What t
 Timelines have their own points of no return, coming after a certain time. If the line does not allow others to exist, the game is lost.
 
 You have 5 minutes to save the lines."
-text = "You are a timeless trainee judge following the life of one place in four different times. Based on the results of this work, you may be promoted ... or fired.
-Your task is to save all 4 timelines. To do this, you need to follow simple steps:
+text = "You are a timeless trainee judge following the life of one place in four different times. Based on the results of this work, you may be promoted or fired.
+Your task is to save all 4 timelines. All tasks write on tasklist (press to ESC).
+
+To do this, you need to follow simple steps:
 - Chase away the bears (click)
 - Help the fallen villagers complete the village (drag'n'drop)
 - Clear the street of trash (drag'n'drop)

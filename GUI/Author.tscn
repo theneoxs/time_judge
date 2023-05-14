@@ -169,9 +169,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -342.5
-margin_top = -81.5
+margin_top = -111.5
 margin_right = 342.5
-margin_bottom = 35.5
+margin_bottom = 5.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Designer
@@ -185,9 +185,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -342.5
-margin_top = 76.5
+margin_top = 17.5
 margin_right = 342.5
-margin_bottom = 153.5
+margin_bottom = 94.5
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 7 )
 text = "Programmer
@@ -207,6 +207,22 @@ margin_bottom = -471.0
 rect_rotation = 29.833
 texture = ExtResource( 5 )
 expand = true
+
+[node name="Label5" type="Label" parent="ColorRect/Authors"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -342.5
+margin_top = 125.5
+margin_right = 342.5
+margin_bottom = 202.5
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "Powered by
+Godot"
+align = 1
+valign = 1
 
 [node name="Refs" type="TextureRect" parent="ColorRect"]
 anchor_left = 0.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Data/Texture/crystall_ball.png" type="Texture" id=1]
 [ext_resource path="res://Entity/Scene3/Scene3.gd" type="Script" id=2]
@@ -7,9 +7,8 @@
 [ext_resource path="res://Entity/Scene3/Header.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Data/Sprites/Cars2.png" type="Texture" id=6]
 [ext_resource path="res://Entity/Scene3/Car.gd" type="Script" id=7]
-[ext_resource path="res://Entity/Scene3/Royal.gd" type="Script" id=8]
+[ext_resource path="res://Entity/Scene3/Royal.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Data/Texture/Asteroid 01 - Base.png" type="Texture" id=9]
-[ext_resource path="res://Data/Sprites/piano.png" type="Texture" id=10]
 [ext_resource path="res://Button_font.tres" type="DynamicFont" id=11]
 [ext_resource path="res://Data/Audio/55_Encounter_02.wav" type="AudioStream" id=12]
 [ext_resource path="res://Entity/Scene3/City/5.png" type="Texture" id=13]
@@ -145,26 +144,7 @@ texture = SubResource( 10 )
 [node name="Header" parent="." instance=ExtResource( 5 )]
 position = Vector2( -91, -74 )
 
-[node name="Royal" type="RigidBody2D" parent="."]
-position = Vector2( -47, -75 )
-collision_layer = 32
-collision_mask = 40
-input_pickable = true
-mode = 2
-mass = 5.0
-gravity_scale = 3.0
-contacts_reported = 7
-contact_monitor = true
-script = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Royal"]
-position = Vector2( 1.06641, 11.9063 )
-shape = SubResource( 3 )
-
-[node name="Sprite" type="Sprite" parent="Royal"]
-position = Vector2( 1, 8 )
-scale = Vector2( 0.0249336, 0.0243469 )
-texture = ExtResource( 10 )
+[node name="Royal" parent="." instance=ExtResource( 8 )]
 
 [node name="Car" type="StaticBody2D" parent="."]
 position = Vector2( -264, 72 )
@@ -240,8 +220,6 @@ align = 1
 valign = 1
 
 [connection signal="timeout" from="Trash_spawn_timer" to="." method="_on_Trash_spawn_timer_timeout"]
-[connection signal="body_entered" from="Royal" to="Royal" method="_on_Royal_body_entered"]
-[connection signal="input_event" from="Royal" to="Royal" method="_on_Royal_input_event"]
 [connection signal="car_crash" from="Car" to="." method="_on_Car_car_crash"]
 [connection signal="timeout" from="Car/Alarm_timer" to="Car" method="_on_Alarm_timer_timeout"]
 [connection signal="timeout" from="Meteor_timer" to="." method="_on_Meteor_timer_timeout"]

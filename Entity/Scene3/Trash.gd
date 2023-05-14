@@ -11,6 +11,9 @@ func _physics_process(delta):
 	if selected:
 		global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 		linear_velocity.y = 0
+	if position.x >= 405 or position.x <= -405 or position.y >= 220 or position.y <= -220:
+		Global.count_trash -= 1
+		queue_free()
 
 func _input(event):
 	if event is InputEventMouseButton:

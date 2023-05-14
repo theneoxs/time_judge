@@ -36,6 +36,7 @@ var start_fin = false
 var is_started = false
 
 func _ready():
+	Global.clear_res()
 	Global.start_game_sound()
 	Global.stop_main_menu_sound()
 	fin_screen.color = Color("8f6854")

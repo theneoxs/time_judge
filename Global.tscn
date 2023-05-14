@@ -35,4 +35,5 @@ bus = "Music"
 stream = ExtResource( 7 )
 bus = "Effects"
 
+[connection signal="finished" from="Main_menu_sound" to="." method="_on_Main_menu_sound_finished"]
 [connection signal="finished" from="Game_sound" to="." method="_on_Game_sound_finished"]

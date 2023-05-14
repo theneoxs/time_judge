@@ -8,15 +8,15 @@ var CHECK_1_BEAR = 200
 var CHECK_2_GENTS = 250
 var DOWN_STAROSTA = 120
 var GENTLEMAN_INCOMING = 180
-var COUNT_BEAR = 8
+var COUNT_BEAR = 6
 var DOWN_METEOR = 270
 var DOWN_PIANO = 180
-var TIME_CREATE_TRASH = 5
-var COUNT_PORTAL = 15
+var TIME_CREATE_TRASH = 6
+var COUNT_PORTAL = 12
 var TIME_CREATE_PORTAL = 6
 var TIME_CREATE_CYBORG = 8
 var WAIT_PORTAL_3 = 10
-var MAX_TRASH = 8
+var MAX_TRASH = 9
 var RUSH_MAN_MIN_TIMER = 4
 var RUSH_MAN_MAX_TIMER = 10
 
@@ -43,10 +43,27 @@ var is_silent_main_menu_sound = false
 var is_silent_game_sound = false
 
 var is_start_game_sound = false
+var is_main_menu_stopped = false
 
 onready var main_menu_sound = $Main_menu_sound
 onready var game_sound = $Game_sound
 var is_game_stopped = false
+
+func clear_res():
+	bear_is_dead = false
+	count_leave_bear = 0
+	bear_is_leave = false
+	count_villager = 4
+	starosta_selfback = false
+	gentleman_leave = false
+	count_trash = 0
+	car_crashed = false
+	item_is_picked = false
+	closing_portal = 0
+	cyborg_repait = 0
+	item_sending = false
+	is_first_woodman = false
+	is_throw_item = false
 
 func _process(delta):
 	if is_silent_main_menu_sound:
@@ -77,9 +94,11 @@ func play_from_pause():
 	$From_pause.play()
 
 func play_main_menu_sound():
+	is_main_menu_stopped = false
 	main_menu_sound.play()
 
 func stop_main_menu_sound():
+	is_main_menu_stopped = true
 	main_menu_sound.stop()
 
 func play_Game_sound():
@@ -110,4 +129,5 @@ func play_trash():
 
 
 func _on_Main_menu_sound_finished():
-	main_menu_sound.play()
+	if !is_main_menu_stopped:
+		main_menu_sound.play()
